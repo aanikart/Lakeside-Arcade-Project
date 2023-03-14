@@ -4,21 +4,40 @@ using UnityEngine;
 
 public class alienmovescript : MonoBehaviour
 {
-    public float MoveSpeed = 5;
-    public float deadZone = -7;
-    // Start is called before the first frame update
+    public AudioClip musicClip;
+    private AudioSource musicSource;
+
+    public GameObject alienprefab;
+    public float alienduration = 5f;
+    public float alienspeed = 5f;
+
     void Start()
     {
+        musicSource = GetComponent<AudioSource>();
+        musicSource.clip = musicClip;
+        musicSource.Play();
+    }
+
+    void Update()
+    {
+        InvokeRepeating("spawnalien", 0f, 2f);
 
     }
 
-    // Update is called once per frame
-    void Update()
+    void spawnalien()
     {
-        if (transform.position.y < deadZone)
+        GameObject alien = Instantiate(alienprefab, new Vector3(0, 5, 0), alienprefab.transform.rotation);
+
+        StartCoroutine(MoveLaser(alien));
+        Destroy(alien, alienduration);
+    }
+
+    IEnumerator MoveLaser(GameObject alien)
+    {
+        while (alien != null)
         {
-            Destroy(gameObject);
+            alien.transform.Translate(Vector3.down * alienspeed * Time.deltaTime);
+            yield return null;
         }
-        transform.position = transform.position + (Vector3.down * MoveSpeed) * Time.deltaTime;
     }
 }
