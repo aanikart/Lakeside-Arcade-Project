@@ -8,11 +8,11 @@ public class lasermovescript : MonoBehaviour
     public GameObject laserPrefab;
     public float laserSpeed = 5f;
     public float laserDuration = 5f;
-    private bool laserActive = false; // flag to check if a laser is active
+    private bool laserActive = false; 
 
     void Update()
     {
-        if (!laserActive) // only spawn a new laser if there are no active lasers
+        if (!laserActive) 
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
