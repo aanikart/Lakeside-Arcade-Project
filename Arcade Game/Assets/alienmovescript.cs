@@ -1,24 +1,99 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+/*using UnityEngine;
 
-public class PipeMoveScript : MonoBehaviour
+public class alienmovescript : MonoBehaviour
 {
-    public float MoveSpeed = 5;
-    public float deadZone = -45;
-    // Start is called before the first frame update
+    public AudioClip musicClip;
+    private AudioSource musicSource;
+
+    public GameObject alienprefab;
+    public float alienduration = 5f;
+    public float alienspeed = 5f;
+
     void Start()
     {
+        musicSource = GetComponent<AudioSource>();
+        musicSource.clip = musicClip;
+        musicSource.Play();
+    }
+
+    void Update()
+    {
+        InvokeRepeating("spawnalien", 0f, 2f);
 
     }
 
-    // Update is called once per frame
+    void spawnalien()
+    {
+        GameObject alien = Instantiate(alienprefab, new Vector3(0, 5, 0), alienprefab.transform.rotation);
+
+        StartCoroutine(MoveLaser(alien));
+        Destroy(alien, alienduration);
+    }
+
+    IEnumerator MoveLaser(GameObject alien)
+    {
+        while (alien != null)
+        {
+            alien.transform.Translate(Vector3.down * alienspeed * Time.deltaTime);
+            yield return null;
+        }
+    }
+}
+*/
+using UnityEngine;
+using System.Collections;
+
+public class AlienSpawner : MonoBehaviour
+{
+
+    public GameObject alienPrefab;
+    public float spawnInterval = 2f;
+    public float alienSpeed = 5f;
+    public float alienduration = 5f;
+
+    private bool alienactive = false;
+
+    private float lastSpawnTime;
+
+    void Start()
+    {
+        lastSpawnTime = Time.time;
+    }
+
     void Update()
     {
-        if (transform.position.x < deadZone)
+       
+        if (!alienactive)
         {
-            Destroy(gameObject);
+            if (Time.time - lastSpawnTime > spawnInterval)
+            {
+                SpawnAlien(0,6);
+                lastSpawnTime = Time.time;
+            }
         }
-        transform.position = transform.position + (Vector3.down * MoveSpeed) * Time.deltaTime;
+    }
+
+    void SpawnAlien(int xc, int yc)
+    {
+        alienactive = true;
+        GameObject alien = Instantiate(alienPrefab, new Vector3(xc, yc, 0), Quaternion.identity);
+ 
+        
+        StartCoroutine(movealien(alienPrefab));
+        Destroy(alien, alienduration);
+    }
+
+    IEnumerator movealien(GameObject alien)
+    {
+        while (alien != null)
+        {
+            alien.transform.Translate(Vector3.down * alienSpeed * Time.deltaTime);
+            yield return null;
+        }
+
+        Destroy(alien);
+        alienactive = false;
     }
 }
