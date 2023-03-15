@@ -5,6 +5,7 @@ public class GameManagerScript : MonoBehaviour
     public Ghost[] ghosts;
     public Pacman pacman;
     public Transform pellets;
+    public int ghostMultiplier { get; private set; } = 1;
     public int score { get; private set; }
     public int lives { get; private set; }
 
@@ -70,7 +71,10 @@ public class GameManagerScript : MonoBehaviour
 
     public void ghostEaten(Ghost ghost)
     {
+        int points = ghost.points * this.ghostMultiplier;
         setScore(this.score + ghost.points);
+
+        this.ghostMultiplier++;
     }
 
     public void pacmanEaten()
@@ -88,6 +92,44 @@ public class GameManagerScript : MonoBehaviour
             gameOver();
         }
 
+    }
+
+    public void pelletEaten(PelletEaten pellet)
+    {
+        pellet.gameObject.SetActive(false);
+        setScore(score + pellet.points);
+
+        if (!hasRemainingPellets())
+        {
+            this.pacman.gameObject.SetActive(false);
+            Invoke(nameof(newRound), 3.0f);
+        }
+    }
+
+    public void powerPelletEaten(PowerPelletEaten pellet)
+    {
+        pelletEaten(pellet);
+        CancelInvoke(nameof(resetGhostMultipler));
+        Invoke(nameof(resetGhostMultipler), pellet.duration);
+    }
+
+    private bool hasRemainingPellets()
+
+    {
+        foreach (Transform pellet in this.pellets)
+        {
+            if (pellet.gameObject.activeSelf)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private void resetGhostMultipler()
+    {
+        this.ghostMultiplier = 1;
     }
 
 }

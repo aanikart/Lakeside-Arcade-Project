@@ -1,18 +1,48 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Movement))]
 public class Pacman : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public AnimatedSprite deathSequence;
+    public SpriteRenderer spriteRenderer { get; private set; }
+    public new Collider2D collider { get; private set; }
+    public Movement movement { get; private set; }
+
+    public float rotationSpeed {  get; private set; }
+
+    private void Awake()
     {
-        
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        collider = GetComponent<Collider2D>();
+        movement = GetComponent<Movement>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void Update()
     {
-        
+        rotationSpeed = 4f;
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            movement.SetDirection(Vector2.up);
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            movement.SetDirection(Vector2.down);
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            movement.SetDirection(Vector2.left);
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            movement.SetDirection(Vector2.right);
+        }
+
+        float angle = Mathf.Atan2(movement.direction.y, movement.direction.x);
+        transform.rotation = Quaternion.AngleAxis(angle * Mathf.Rad2Deg, Vector3.forward);
+
+        Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, movement.direction);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+
     }
 }
