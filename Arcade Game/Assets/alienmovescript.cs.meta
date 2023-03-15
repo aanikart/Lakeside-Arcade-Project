@@ -3,7 +3,9 @@ guid: 5c331a705bb82492f9bf52c2a67e1dcf
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - musicClip: {fileID: 8300000, guid: 0343f0ad9ba684132a8f67bc69abd924, type: 3}
+  - alienprefab: {fileID: 9127824823418285941, guid: e9bb330b3276c4535bfecdfb2d12a561, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-/*using UnityEngine;
+using UnityEngine;
 
 public class alienmovescript : MonoBehaviour
 {
@@ -41,7 +41,10 @@ public class alienmovescript : MonoBehaviour
         }
     }
 }
-*/
+
+
+
+/*
 using UnityEngine;
 using System.Collections;
 
@@ -97,3 +100,4 @@ public class AlienSpawner : MonoBehaviour
         alienactive = false;
     }
 }
+*/
