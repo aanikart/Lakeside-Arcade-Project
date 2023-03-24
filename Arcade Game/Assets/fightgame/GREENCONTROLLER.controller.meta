@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Assets/GREENCONTROLLER.controller.meta
+<<<<<<<< HEAD:GREENCONTROLLER.controller.meta
+guid: a7363b1f6a1b3e541af6f002e684bab4
+========
+guid: c6bc276db9f007d409566dc4b026e6ca
+>>>>>>>> b1b1aa0cf9665773a743e964dccef9809f2ef8dc:Arcade Game/ProjectSettings/AudioManager.asset.meta
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+=======
+guid: a7363b1f6a1b3e541af6f002e684bab4
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+>>>>>>> b1b1aa0cf9665773a743e964dccef9809f2ef8dc:GREENCONTROLLER.controller.meta
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

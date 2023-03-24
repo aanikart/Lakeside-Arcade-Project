@@ -6,7 +6,6 @@ public class fightscript : MonoBehaviour
 {
     public Animator animator;
     public float runSpeed = 40f;
-
     // Start is called before the first frame update
     void Start()
     {
