@@ -104,7 +104,7 @@ NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 3
+    serializedVersion: 2
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -117,7 +117,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    buildHeightMesh: 0
+    accuratePlacement: 0
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -291,17 +291,9 @@ Camera:
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
-  m_Iso: 200
-  m_ShutterSpeed: 0.005
-  m_Aperture: 16
-  m_FocusDistance: 10
-  m_FocalLength: 50
-  m_BladeCount: 5
-  m_Curvature: {x: 2, y: 11}
-  m_BarrelClipping: 0.25
-  m_Anamorphism: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -360,10 +352,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c331a705bb82492f9bf52c2a67e1dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alienPrefab: {fileID: 782878592}
-  spawnInterval: 2
-  alienSpeed: 7
+  musicClip: {fileID: 0}
+  alienprefab: {fileID: 782878592}
   alienduration: 4
+  alienspeed: 5
 --- !u!1 &1844368749 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2202525021693626337, guid: e12e27a30514e49c882874bc5507c2eb, type: 3}
@@ -401,7 +393,6 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 979614726724721154, guid: e12e27a30514e49c882874bc5507c2eb, type: 3}
@@ -469,22 +460,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2202525021693626337, guid: e12e27a30514e49c882874bc5507c2eb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1844368753}
-    - targetCorrespondingSourceObject: {fileID: 2202525021693626337, guid: e12e27a30514e49c882874bc5507c2eb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1844368754}
   m_SourcePrefab: {fileID: 100100000, guid: e12e27a30514e49c882874bc5507c2eb, type: 3}
 --- !u!1001 &9127824822610805075
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 9127824823418285941, guid: e9bb330b3276c4535bfecdfb2d12a561, type: 3}
@@ -548,10 +529,4 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9127824823418285941, guid: e9bb330b3276c4535bfecdfb2d12a561, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 782878593}
   m_SourcePrefab: {fileID: 100100000, guid: e9bb330b3276c4535bfecdfb2d12a561, type: 3}
