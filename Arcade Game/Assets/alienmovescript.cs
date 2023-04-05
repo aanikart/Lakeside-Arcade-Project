@@ -27,10 +27,6 @@ public class alienmovescript : MonoBehaviour
         alien.transform.Translate(Vector3.down * alienspeed * Time.deltaTime);
     }
 
-    IEnumerator WaitForFunction()
-    {
-        yield return new WaitForSeconds(3);
-        Debug.Log("Hello!");
-    }
+    
 
 }

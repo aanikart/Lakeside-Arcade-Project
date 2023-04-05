@@ -66,7 +66,13 @@ public class alienspawnscript : MonoBehaviour
         return randomdelaytime;
     }
 
-  
+    IEnumerator WaitForFunction()
+    {
+        yield return new WaitForSeconds(2);
+        Debug.Log("waited");
+    }
+
+
 
 
 
