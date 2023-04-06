@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bulletscript : MonoBehaviour
+public class enemybullet : MonoBehaviour
 {
-    public float speed = 5f;
+    public float speed = 6f;
     public float deactivateTimer = 3f;
 
     // Start is called before the first frame update
     void Start()
     {
-        transform.Rotate(0, 0, 270);
+        
         Invoke("Deactivate", deactivateTimer);
     }
 
@@ -23,7 +23,7 @@ public class bulletscript : MonoBehaviour
     void Move()
     {
         Vector3 temp = transform.position;
-        temp.x += speed * Time.deltaTime;
+        temp.x -= speed * Time.deltaTime;
         transform.position = temp;
     }
 
@@ -35,11 +35,18 @@ public class bulletscript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "enemylaser(Clone)"|| collision.gameObject.name == "enemyalien(Clone)")
-            
+        
+        if (collision.gameObject.name == "playerlaser(Clone)")
         {
             Deactivate();
+           
+        }
+        if (collision.gameObject.name == "spaceship")
+        {
+            Deactivate();
+            //minus points
+            
         }
     }
-    
+
 }

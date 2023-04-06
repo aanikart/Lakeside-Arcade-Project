@@ -28,6 +28,7 @@ public class enemyspawner : MonoBehaviour
 
         yield return new WaitForSeconds(3);
         Instantiate(enemy, new Vector3(11, spawnY, 0), Quaternion.identity);
+        
         StartCoroutine(spawntimer());
     }
 }
