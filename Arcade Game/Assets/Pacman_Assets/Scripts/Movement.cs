@@ -36,7 +36,8 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
-        // making movements more responsive by predicting next movement
+        // Try to move in the next direction while it's queued to make movements
+        // more responsive
         if (nextDirection != Vector2.zero)
         {
             SetDirection(nextDirection);
