@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a4c4afac14f94dd5bbacbb7028d043a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 7634952427486812260, guid: f70186bf20410492d9c0036eb95a4e7e, type: 3}
+  enemy: {fileID: 8172338776577102380, guid: f70186bf20410492d9c0036eb95a4e7e, type: 3}
   min: -3.8
   max: 3.8
 --- !u!4 &1391841779
@@ -270,6 +270,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 2.14
       objectReference: {fileID: 0}
+    - target: {fileID: 6592951231384456210, guid: a820f9158d0a648569c4d6d821faa312, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6592951231384456212, guid: a820f9158d0a648569c4d6d821faa312, type: 3}
       propertyPath: attackpoint
       value: 
@@ -278,6 +282,10 @@ PrefabInstance:
       propertyPath: playerbullet
       value: 
       objectReference: {fileID: 860795228448792086, guid: ec1547b386261468cafce6dc60f4ce5b, type: 3}
+    - target: {fileID: 6592951231384456213, guid: a820f9158d0a648569c4d6d821faa312, type: 3}
+      propertyPath: m_UseFullKinematicContacts
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6592951231384456215, guid: a820f9158d0a648569c4d6d821faa312, type: 3}
       propertyPath: m_RootOrder
       value: 1
