@@ -42,4 +42,10 @@ public class Pacman : MonoBehaviour
         transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
 
     }
+
+    public void resetState()
+    {
+        this.gameObject.SetActive(true);
+        this.movement.ResetState();
+    }
 }

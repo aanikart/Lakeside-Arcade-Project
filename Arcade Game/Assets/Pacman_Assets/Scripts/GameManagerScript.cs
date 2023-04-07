@@ -43,10 +43,10 @@ public class GameManagerScript : MonoBehaviour
     {
         for (int i = 0; i < this.ghosts.Length; i++)
         {
-            this.ghosts[i].gameObject.SetActive(true);
+            this.ghosts[i].resetState();
         }
 
-        this.pacman.gameObject.SetActive(true);
+        this.pacman.resetState();
     }
 
     private void gameOver()
