@@ -5,7 +5,9 @@ using UnityEngine;
 public class fightscript : MonoBehaviour
 {
     public Animator animator;
+    public Rigidbody2D rb;
     public float runSpeed = 40f;
+    public float jumpAmount = 70;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,9 +18,36 @@ public class fightscript : MonoBehaviour
     void Update()
     {
         float h = Input.GetAxis("Horizontal") * runSpeed;
-        float v = Input.GetAxis("Vertical");
-        gameObject.transform.Translate(h* Time.deltaTime, v, 0);
-
+        //float v = Input.GetAxis("Vertical") * jumpAmount;
+        gameObject.transform.Translate(h* Time.deltaTime,0, 0);
+        if (transform.position.x <= (-9.8))
+        {
+            gameObject.transform.position = new Vector3((float)-9.79, (float)-1.75, 0);
+        }
+        if (transform.position.x >= (9.8))
+        {
+            gameObject.transform.position = new Vector3((float)9.79, (float)-1.75, 0);
+        }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            gameObject.transform.localScale = new Vector3(-15, 15, 0);
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            gameObject.transform.localScale = new Vector3(15, 15, 0);
+        }
+        if (transform.position.y <= (-1.75))
+        {
+            gameObject.transform.position = new Vector3(transform.position.x, (float)-1.75, 0);
+        }
+        if (transform.position.y >= (2.75))
+        {
+            gameObject.transform.position = new Vector3(transform.position.x, (float)2.75, 0);
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
+        }
         if (Input.GetKeyDown(KeyCode.E))
         {
             animator.SetBool("isLPunching", true);
