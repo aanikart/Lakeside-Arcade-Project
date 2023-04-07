@@ -5,7 +5,7 @@ public class Movement : MonoBehaviour
 {
     public float speed = 8f;
     public float speedMultiplier = 1f;
-    private Vector2 initialDirection;
+    public Vector2 initialDirection;
     public LayerMask obstacleLayer;
 
     public new Rigidbody2D rigidbody { get; private set; }
@@ -36,8 +36,7 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
-        // Try to move in the next direction while it's queued to make movements
-        // more responsive
+        // making movements more responsive by predicting next movement
         if (nextDirection != Vector2.zero)
         {
             SetDirection(nextDirection);
@@ -71,7 +70,7 @@ public class Movement : MonoBehaviour
     public bool Occupied(Vector2 direction)
     {
         // If no collider is hit then there is no obstacle in that direction
-        RaycastHit2D hit = Physics2D.BoxCast(transform.position, Vector2.one * 0.5f, 0f, direction, 2f, obstacleLayer);
+        RaycastHit2D hit = Physics2D.BoxCast(transform.position, Vector2.one * 0.75f, 0f, direction, 1.5f, obstacleLayer);
         return hit.collider != null;
     }
 

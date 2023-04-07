@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6503938999063486441
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2266441195915955011, guid: 49d2bcb6f496e3848990d7318c3aba6a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7c48527698653624ca5c3fd6b030e7fc, type: 3}
+    - target: {fileID: 6868573772451469205, guid: 49d2bcb6f496e3848990d7318c3aba6a, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6868573772451469205, guid: 49d2bcb6f496e3848990d7318c3aba6a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 6868573772451469205, guid: 49d2bcb6f496e3848990d7318c3aba6a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6868573772451469205, guid: 49d2bcb6f496e3848990d7318c3aba6a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6868573772451469205, guid: 49d2bcb6f496e3848990d7318c3aba6a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6868573772451469205, guid: 49d2bcb6f496e3848990d7318c3aba6a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6868573772451469205, guid: 49d2bcb6f496e3848990d7318c3aba6a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6868573772451469205, guid: 49d2bcb6f496e3848990d7318c3aba6a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6868573772451469205, guid: 49d2bcb6f496e3848990d7318c3aba6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6868573772451469205, guid: 49d2bcb6f496e3848990d7318c3aba6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6868573772451469205, guid: 49d2bcb6f496e3848990d7318c3aba6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6868573772451469207, guid: 49d2bcb6f496e3848990d7318c3aba6a, type: 3}
+      propertyPath: m_Name
+      value: PinkGhost
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041234065843603284, guid: 49d2bcb6f496e3848990d7318c3aba6a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041234065843603284, guid: 49d2bcb6f496e3848990d7318c3aba6a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954349274712103683, guid: 49d2bcb6f496e3848990d7318c3aba6a, type: 3}
+      propertyPath: m_Color.b
+      value: 0.75686276
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954349274712103683, guid: 49d2bcb6f496e3848990d7318c3aba6a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954349274712103683, guid: 49d2bcb6f496e3848990d7318c3aba6a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.95686275
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 49d2bcb6f496e3848990d7318c3aba6a, type: 3}
+--- !u!1 &364986711714154622 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6868573772451469207, guid: 49d2bcb6f496e3848990d7318c3aba6a, type: 3}
+  m_PrefabInstance: {fileID: 6503938999063486441}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6252086674693327847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364986711714154622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04b3cd0faf18af942aed5c085a59c18d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 8
+  speedMultiplier: 1
+  initialDirection: {x: 0, y: -1}
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 512

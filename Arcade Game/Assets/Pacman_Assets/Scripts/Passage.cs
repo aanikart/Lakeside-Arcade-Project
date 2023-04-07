@@ -5,13 +5,11 @@ using UnityEngine;
 public class Passage : MonoBehaviour
 
 {
-    public Transform otherCollider;
+    public Transform connection;
     private void OnTriggerEnter2D(Collider2D firstCollider)
     {
-        Vector3 pos = firstCollider.transform.position;
-        pos.x = otherCollider.transform.position.x;
-        pos.y = otherCollider.transform.position.y; 
-        otherCollider.transform.position = pos;
-        
+        Vector3 pos = connection.position;
+        pos.z = firstCollider.transform.position.z;
+        firstCollider.transform.position = pos;
     }
 }
