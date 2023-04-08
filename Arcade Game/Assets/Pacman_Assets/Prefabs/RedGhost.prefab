@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3023980874735356520, guid: 49d2bcb6f496e3848990d7318c3aba6a, type: 3}
+      propertyPath: initialBehavior
+      value: 
+      objectReference: {fileID: 4691886884652615870}
     - target: {fileID: 6868573772451469205, guid: 49d2bcb6f496e3848990d7318c3aba6a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -92,3 +96,14 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 512
+--- !u!114 &4691886884652615870 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1777693908619770692, guid: 49d2bcb6f496e3848990d7318c3aba6a, type: 3}
+  m_PrefabInstance: {fileID: 6464720949527753722}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496906721611506797}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7563f8794c7af439d5e9749ac63d2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
