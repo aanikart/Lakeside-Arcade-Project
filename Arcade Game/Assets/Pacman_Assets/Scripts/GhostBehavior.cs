@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// abstract makes it so that you can never have a ghost behavior by itself; it needs to have something that inherits it 
+// abstract makes it so that you can never have a ghost behavior by itself on a game object,
+// it needs to have something that inherits it 
 public abstract class GhostBehavior : MonoBehaviour
 {
     public Ghost ghost { get; private set; }
@@ -11,27 +12,31 @@ public abstract class GhostBehavior : MonoBehaviour
     private void Awake()
     {
         
-        this.ghost = GetComponent<Ghost>();
-        this.enabled = false;
+        ghost = GetComponent<Ghost>();
+        // initially start out as false 
+        enabled = false;
     }
 
-    // enable ghost without specifying duration with default duration
+    // enable ghost behavior with default duration
     public void enable()
     {
-        enable(this.duration);
+        enable(duration);
     }
 
-    // when there is a dependence on other durations, e.g. power pellet duration
+    // for when there is a dependence on other durations, e.g. power pellet duration
+    // virtual so they can be overriden in individual behavior classes
     public virtual void enable (float duration)
     {
-        this.enabled = true;
+        enabled = true;
 
+        // set a timer that will disable behavior after duration 
         Invoke(nameof(disable), duration);
     }
 
     public virtual void disable ()
     {
-        this.enabled = false;
+        // disable behavior
+        enabled = false;
 
         CancelInvoke();
     }
