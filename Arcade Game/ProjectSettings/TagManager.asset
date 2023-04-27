@@ -17,8 +17,8 @@ TagManager:
   - 'Pellet '
   - Obstacle
   - Node
-  - 
-  - 
+  - Hitbox
+  - Hurtbox
   - 
   - 
   - 
