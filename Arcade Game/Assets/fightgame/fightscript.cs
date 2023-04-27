@@ -8,6 +8,9 @@ public class fightscript : MonoBehaviour
     public Rigidbody2D rb;
     public float runSpeed = 40f;
     public float jumpAmount = 70;
+    public Transform lpointpunch;
+    public float lpunchrange = 0.5f;
+    public LayerMask enemy;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +46,7 @@ public class fightscript : MonoBehaviour
         if (transform.position.y >= (2.75))
         {
             gameObject.transform.position = new Vector3(transform.position.x, (float)2.75, 0);
-        }
+        }      
         if (Input.GetKeyDown(KeyCode.W))
         {
             rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
@@ -51,6 +54,7 @@ public class fightscript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             animator.SetBool("isLPunching", true);
+            //Collider2D[] enemies = Physics2D.OverlapCircleAll(lpointpunch,lpunchrange,ene)
         }
         if (Input.GetKeyUp(KeyCode.E))
         {

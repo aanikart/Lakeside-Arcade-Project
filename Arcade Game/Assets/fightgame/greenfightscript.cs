@@ -80,5 +80,10 @@ public class greenfightscript : MonoBehaviour
         {
             animator.SetBool("isRKickingG", false);
         }
+        
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("hit");
     }
 }
