@@ -11,44 +11,47 @@ public class AnimatedSprite : MonoBehaviour
     public SpriteRenderer spriteRenderer {  get; private set; }
     public Sprite[] sprites;
     public float animationTime = 0.25f;
-    public float repeatRate = 0.15f;
+    private float repeatRate = 0.15f;
     public int animationFrame { get; private set; }
     public bool loop = true;
     private void Awake()
     {
-        this.spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
     {
-        InvokeRepeating(nameof(AdvanceFrame), this.animationTime, this.repeatRate);
+        InvokeRepeating(nameof(AdvanceFrame), animationTime, repeatRate);
     }
 
     private void AdvanceFrame()
     {
-        if (!this.spriteRenderer.enabled)
+        if (!spriteRenderer.enabled)
         {
             return;
         }
         
-        this.animationFrame++;
+        animationFrame++;
 
-        if (this.animationFrame >= this.sprites.Length && this.loop) {
+        /* resets animation frame to 0 if looping and frame reaches end of sprites list */
+
+        if (animationFrame >= sprites.Length && loop) {
             
-            this.animationFrame = 0;
+            animationFrame = 0;
         
         }
 
-        if (this.animationFrame >= 0 && this.animationFrame < this.sprites.Length) {
+        /* sets sprite to next sprite in list if looping and not at the end of sprites list */
+        if (animationFrame >= 0 && animationFrame < sprites.Length) {
 
-            this.spriteRenderer.sprite = this.sprites[this.animationFrame];
+            spriteRenderer.sprite = sprites[animationFrame];
         
         }
     }
 
     public void Restart()
     {
-        this.animationFrame = -1;
+        animationFrame = -1;
 
         AdvanceFrame();
     }
