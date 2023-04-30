@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2221532792911046639, guid: cb09be6f046a0da4b930ac9190255018, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 873037585535517660, guid: cb09be6f046a0da4b930ac9190255018, type: 3}
       propertyPath: m_Name
       value: RedGhost

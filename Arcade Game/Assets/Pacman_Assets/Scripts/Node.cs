@@ -10,22 +10,23 @@ public class Node : MonoBehaviour
     {
         availableDirections = new List<Vector2>();
 
-        // We determine if the direction is available by box casting to see if
-        // we hit a wall. The direction is added to list if available.
-        CheckAvailableDirection(Vector2.up);
-        CheckAvailableDirection(Vector2.down);
-        CheckAvailableDirection(Vector2.left);
-        CheckAvailableDirection(Vector2.right);
+        // check available direction on all directions
+        checkAvailableDirection(Vector2.up);
+        checkAvailableDirection(Vector2.down);
+        checkAvailableDirection(Vector2.left);
+        checkAvailableDirection(Vector2.right);
     }
 
-    private void CheckAvailableDirection(Vector2 direction)
+    private void checkAvailableDirection(Vector2 direction)
     {
+        // detect hit
         RaycastHit2D hit = Physics2D.BoxCast(transform.position, Vector2.one * 0.5f, 0f, direction, 1f, obstacleLayer);
 
-        // If no collider is hit then there is no obstacle in that direction
+        // if no hit, then there is no obstacle in that direction
         if (hit.collider == null)
         {
             availableDirections.Add(direction);
+            print(availableDirections);
         }
     }
 

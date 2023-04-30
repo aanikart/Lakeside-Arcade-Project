@@ -43,6 +43,7 @@ public class Pacman : MonoBehaviour
 
     }
 
+    // resets movement state and turns object back on 
     public void resetState()
     {
         gameObject.SetActive(true);

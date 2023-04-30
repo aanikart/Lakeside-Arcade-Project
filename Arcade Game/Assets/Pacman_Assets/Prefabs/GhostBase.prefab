@@ -13,7 +13,10 @@ GameObject:
   - component: {fileID: 2328542088794597106}
   - component: {fileID: 3109338178201406523}
   - component: {fileID: 8903931398698788248}
-  - component: {fileID: 8642354477129017688}
+  - component: {fileID: -2571389817579793708}
+  - component: {fileID: -5212354693837727621}
+  - component: {fileID: -2857793774565712480}
+  - component: {fileID: -2221532792911046639}
   m_Layer: 7
   m_Name: GhostBase
   m_TagString: Untagged
@@ -110,7 +113,20 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 512
---- !u!114 &8642354477129017688
+--- !u!114 &-2571389817579793708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873037585535517660}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4680d7dbadf28248bfa382f6bda2e7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0
+--- !u!114 &-5212354693837727621
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,6 +136,32 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77f8da33afb330e49ae906a76ae9b17a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0
+--- !u!114 &-2857793774565712480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873037585535517660}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28eb631d1dda0db4aab0abde70f84ee8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0
+--- !u!114 &-2221532792911046639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873037585535517660}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7563f8794c7af439d5e9749ac63d2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 0

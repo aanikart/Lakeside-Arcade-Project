@@ -16,7 +16,7 @@ public class GameManagerScript : MonoBehaviour
 
     private void Update()
     {
-        if (this.lives <= 0 &&  Input.anyKeyDown)
+        if (lives <= 0 &&  Input.anyKeyDown)
         {
             newGame();
         }
@@ -31,7 +31,7 @@ public class GameManagerScript : MonoBehaviour
 
     private void newRound()
     {
-        foreach (Transform pellet in this.pellets)
+        foreach (Transform pellet in pellets)
         {
             pellet.gameObject.SetActive(true);
         }
@@ -39,24 +39,25 @@ public class GameManagerScript : MonoBehaviour
         resetState();
     }
 
+    // resetting state of ghosts by looping and pacman 
     private void resetState()
     {
-        for (int i = 0; i < this.ghosts.Length; i++)
+        for (int i = 0; i < ghosts.Length; i++)
         {
-            this.ghosts[i].resetState();
+            ghosts[i].resetState();
         }
 
-        this.pacman.resetState();
+        pacman.resetState();
     }
 
     private void gameOver()
     {
-        for (int i = 0; i < this.ghosts.Length; i++)
+        for (int i = 0; i < ghosts.Length; i++)
         {
-            this.ghosts[i].gameObject.SetActive(false);
+            ghosts[i].gameObject.SetActive(false);
         }
 
-        this.pacman.gameObject.SetActive(false);
+        pacman.gameObject.SetActive(false);
     }
 
     private void setScore(int score)
@@ -71,19 +72,19 @@ public class GameManagerScript : MonoBehaviour
 
     public void ghostEaten(Ghost ghost)
     {
-        int points = ghost.points * this.ghostMultiplier;
-        setScore(this.score + ghost.points);
+        int points = ghost.points * ghostMultiplier;
+        setScore(score + ghost.points);
 
-        this.ghostMultiplier++;
+        ghostMultiplier++;
     }
 
     public void pacmanEaten()
     {
-        this.pacman.gameObject.SetActive(false);
+        pacman.gameObject.SetActive(false);
 
-        setLives(this.lives - 1);
+        setLives(lives - 1);
 
-        if (this.lives > 0)
+        if (lives > 0)
         {
             Invoke(nameof(resetState), 3.0f);
         }
@@ -101,7 +102,7 @@ public class GameManagerScript : MonoBehaviour
 
         if (!hasRemainingPellets())
         {
-            this.pacman.gameObject.SetActive(false);
+            pacman.gameObject.SetActive(false);
             Invoke(nameof(newRound), 3.0f);
         }
     }
@@ -129,7 +130,7 @@ public class GameManagerScript : MonoBehaviour
 
     private void resetGhostMultipler()
     {
-        this.ghostMultiplier = 1;
+        ghostMultiplier = 1;
     }
 
 }
