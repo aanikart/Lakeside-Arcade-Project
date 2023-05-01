@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class GhostFrightened : GhostBehavior
 {
-    private void Update()
+    private void OnDisable()
     {
-        
+        ghost.Scatter.enable();
     }
+
 
 }

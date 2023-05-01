@@ -26,7 +26,6 @@ public class Node : MonoBehaviour
         if (hit.collider == null)
         {
             availableDirections.Add(direction);
-            print(availableDirections);
         }
     }
 

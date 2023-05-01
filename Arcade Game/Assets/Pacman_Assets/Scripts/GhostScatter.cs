@@ -16,7 +16,6 @@ public class GhostScatter : GhostBehavior
             int index = Random.Range(0, node.availableDirections.Count);
             // don't want ghost to go to node in exact opposite direction, so if it is,
             // increase index or set it equal to 0 if at the end of availableDirections list
-            //print(index);
             if (node.availableDirections[index] == -ghost.Movement.direction && node.availableDirections.Count > 1)
             {
                 index++;

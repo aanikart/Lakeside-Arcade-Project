@@ -2,23 +2,23 @@ using UnityEngine;
 
 public class Ghost : MonoBehaviour
 {
-    public Movement Movement {  get; private set; }
+    public Movement Movement { get; private set; }
     public GhostHome Home { get; private set; }
     public GhostScatter Scatter { get; private set; }
-    public GhostChase Chase { get; private set; }   
+    public GhostChase Chase { get; private set; }
     public GhostFrightened Frightened { get; private set; }
     // to keep track of initial behaviors of each ghost 
     public GhostBehavior initialBehavior;
     // what the ghost is chasing - in this case pacman
     public Transform target;
-    public int points = 200;
+    public int points = 0;
 
     public void Start()
     {
         resetState();
     }
 
-    // adding all scripts so they can reference each other 
+    // add all scripts so they can reference each other 
     private void Awake()
     {
         Movement = GetComponent<Movement>();
@@ -28,23 +28,23 @@ public class Ghost : MonoBehaviour
         Frightened = GetComponent<GhostFrightened>();
 
     }
-    // resets movement state and turns object back on 
-    // disables/enables certain behaviors depending on initial behavior
-    public void resetState () 
-    { 
+    // reset movement state and turn object back on 
+    // disable/enable certain behaviors depending on initial behavior
+    public void resetState()
+    {
         Movement.ResetState();
         gameObject.SetActive(true);
 
-        Frightened.disable(); 
-        Chase.disable(); 
-        Scatter.enable(); 
+        Frightened.disable();
+        Chase.disable();
+        Scatter.enable();
 
         if (Home != initialBehavior)
         {
             Home.disable();
         }
 
-        // null check to be safe 
+
         if (initialBehavior != Scatter)
         {
             Scatter.disable();

@@ -1,13 +1,17 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManagerScript : MonoBehaviour
 {
     public Ghost[] ghosts;
     public Pacman pacman;
+    // array of Transform pellets
     public Transform pellets;
-    public int ghostMultiplier { get; private set; } = 1;
-    public int score { get; private set; }
+    public int pointMultiplier { get; private set; } = 1;
+    public static int score { get; private set; }
     public int lives { get; private set; }
+    public Text scoreText;
+    public Text livesText;
 
     private void Start()
     {
@@ -16,12 +20,13 @@ public class GameManagerScript : MonoBehaviour
 
     private void Update()
     {
-        if (lives <= 0 &&  Input.anyKeyDown)
+        if (lives <= 0 && Input.anyKeyDown)
         {
             newGame();
         }
     }
 
+    // initialize variables once game is started
     private void newGame()
     {
         setScore(0);
@@ -29,6 +34,7 @@ public class GameManagerScript : MonoBehaviour
         newRound();
     }
 
+    // each new round, reactivate the pellets
     private void newRound()
     {
         foreach (Transform pellet in pellets)
@@ -36,6 +42,7 @@ public class GameManagerScript : MonoBehaviour
             pellet.gameObject.SetActive(true);
         }
 
+        // each new round, reset states of game objects
         resetState();
     }
 
@@ -50,6 +57,7 @@ public class GameManagerScript : MonoBehaviour
         pacman.resetState();
     }
 
+    // if game is over, set states of game objects to inactive
     private void gameOver()
     {
         for (int i = 0; i < ghosts.Length; i++)
@@ -58,35 +66,42 @@ public class GameManagerScript : MonoBehaviour
         }
 
         pacman.gameObject.SetActive(false);
+
     }
 
-    private void setScore(int score)
+    private void setScore(int newScore)
     {
-        this.score = score;
+        score += newScore;
+        scoreText.text = score.ToString();
     }
 
     private void setLives(int lives)
     {
         this.lives = lives;
+        livesText.text = lives.ToString();
     }
 
+    // adds points to pacman score if ghost is eaten
+    // each time a ghost in frightened mode is eaten, pointMultiplier increases 
     public void ghostEaten(Ghost ghost)
     {
-        int points = ghost.points * ghostMultiplier;
+        int points = ghost.points * pointMultiplier;
         setScore(score + ghost.points);
 
-        ghostMultiplier++;
+        pointMultiplier++;
     }
 
+    // pacman behavior if eaten - depending on 
     public void pacmanEaten()
     {
         pacman.gameObject.SetActive(false);
+        
 
         setLives(lives - 1);
 
         if (lives > 0)
         {
-            Invoke(nameof(resetState), 3.0f);
+            Invoke(nameof(resetState), 2.0f);
         }
         else
         {
@@ -110,8 +125,8 @@ public class GameManagerScript : MonoBehaviour
     public void powerPelletEaten(PowerPelletEaten pellet)
     {
         pelletEaten(pellet);
-        CancelInvoke(nameof(resetGhostMultipler));
-        Invoke(nameof(resetGhostMultipler), pellet.duration);
+        CancelInvoke(nameof(resetPointMultipler));
+        Invoke(nameof(resetPointMultipler), pellet.duration);
     }
 
     private bool hasRemainingPellets()
@@ -128,9 +143,9 @@ public class GameManagerScript : MonoBehaviour
         return false;
     }
 
-    private void resetGhostMultipler()
+    private void resetPointMultipler()
     {
-        ghostMultiplier = 1;
+        pointMultiplier = 1;
     }
 
 }
