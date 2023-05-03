@@ -5,15 +5,23 @@ using UnityEngine.SceneManagement;
 
 
 public class mainscenemanager : MonoBehaviour
+
 {
+
+
     public void shooting()
     {
+
        SceneManager.LoadScene("alienhome");
+
 
     }
 
     public void fighting()
     {
+
+       
+
         SceneManager.LoadScene("teiseat-fightinggame");
 
     }
@@ -22,6 +30,9 @@ public class mainscenemanager : MonoBehaviour
     {
         SceneManager.LoadScene("aanika-pacmangame");
 
+
     }
+
+    
 }
 

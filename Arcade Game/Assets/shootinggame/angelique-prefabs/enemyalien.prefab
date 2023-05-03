@@ -109,7 +109,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 45bd777453c1c4ab3b87b91f0ca5fc50, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -303,3 +303,4 @@ MonoBehaviour:
   enemybullet: {fileID: 645971585219876943, guid: c3c6ed78f80e6474b80d3dfc61066bb4, type: 3}
   shootpoint: {fileID: 3021503305989913457}
   pointup: {fileID: 8300000, guid: bdd08df80bf3e450f9322b9bf38de783, type: 3}
+  alreadyplayed: 0
