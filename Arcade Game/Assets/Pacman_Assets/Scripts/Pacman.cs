@@ -3,6 +3,7 @@ using UnityEngine;
 public class Pacman : MonoBehaviour
 {
     public AnimatedSprite deathSequence;
+    public SpriteRenderer spriteRenderer;
     public new Collider2D collider { get; private set; }
     public Movement movement { get; private set; }
 
@@ -12,6 +13,7 @@ public class Pacman : MonoBehaviour
     {
         collider = GetComponent<Collider2D>();
         movement = GetComponent<Movement>();
+        spriteRenderer= GetComponent<SpriteRenderer>();
     }
 
 
@@ -42,10 +44,17 @@ public class Pacman : MonoBehaviour
         transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
 
     }
-
+ 
+    // reset movement state and turn object back on 
+    // disable/enable certain behaviors depending on initial behavior
     public void resetState()
     {
-        gameObject.SetActive(true);
+        this.enabled = true;
+        spriteRenderer.enabled = true;
+        collider.enabled = true;
+        //deathSequence.enabled = false;
+        //deathSequence.spriteRenderer.enabled = false;
         movement.ResetState();
+        gameObject.SetActive(true);
     }
 }

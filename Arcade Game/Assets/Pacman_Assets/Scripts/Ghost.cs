@@ -2,49 +2,52 @@ using UnityEngine;
 
 public class Ghost : MonoBehaviour
 {
-    public Movement movement {  get; private set; }
-    public GhostHome home { get; private set; }
-    public GhostScatter scatter { get; private set; }
-    public GhostChase chase { get; private set; }   
-    public GhostFrightened frightened { get; private set; }
+    public Movement Movement { get; private set; }
+    public GhostHome Home { get; private set; }
+    public GhostScatter Scatter { get; private set; }
+    public GhostChase Chase { get; private set; }
+    public GhostFrightened Frightened { get; private set; }
     // to keep track of initial behaviors of each ghost 
     public GhostBehavior initialBehavior;
     // what the ghost is chasing - in this case pacman
     public Transform target;
-    public int points = 200;
+    public int points = 0;
 
     public void Start()
     {
         resetState();
     }
 
-    // adding all scripts here so they are able to reference each other 
+    // add all scripts so they can reference each other 
     private void Awake()
     {
-        movement = GetComponent<Movement>();
-        home = GetComponent<GhostHome>();
-        scatter = GetComponent<GhostScatter>();
-        chase = GetComponent<GhostChase>();
-        frightened = GetComponent<GhostFrightened>();
+        Movement = GetComponent<Movement>();
+        Home = GetComponent<GhostHome>();
+        Scatter = GetComponent<GhostScatter>();
+        Chase = GetComponent<GhostChase>();
+        Frightened = GetComponent<GhostFrightened>();
 
     }
-
-    public void resetState () 
-    { 
-        movement.ResetState();
+    // reset movement state and turn object back on 
+    // disable/enable certain behaviors depending on initial behavior
+    public void resetState()
+    {
+        Movement.ResetState();
         gameObject.SetActive(true);
 
-        this.frightened.disable(); 
-        this.chase.disable(); 
-        this.scatter.enable(); 
+        Frightened.disable();
+        Chase.disable();
+        Scatter.enable();
 
-        if (home != initialBehavior)
+        if (Home != initialBehavior)
         {
-            home.disable();
+            Home.disable();
         }
 
-        if (initialBehavior!= null)
+
+        if (initialBehavior != Scatter)
         {
+            Scatter.disable();
             initialBehavior.enable();
         }
 
@@ -57,17 +60,19 @@ public class Ghost : MonoBehaviour
         transform.position = position;
     }
 
-    // not colliders, but actual collisions
+    // detects collisions
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Pacman"))
         {
-            if (frightened.enabled)
+            if (Frightened.enabled)
             {
+                // if ghost is in frightened mode, collision means ghost is eaten 
                 FindObjectOfType<GameManagerScript>().ghostEaten(this);
             }
             else
             {
+                // if not, collision means pacman is eaten
                 FindObjectOfType<GameManagerScript>().pacmanEaten();
             }
         }

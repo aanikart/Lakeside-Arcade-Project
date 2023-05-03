@@ -14,7 +14,7 @@ public abstract class GhostBehavior : MonoBehaviour
         
         ghost = GetComponent<Ghost>();
         // initially start out as false 
-        enabled = false;
+        this.enabled = false;
     }
 
     // enable ghost behavior with default duration
