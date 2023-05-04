@@ -8,10 +8,10 @@ public class GameOverScript : MonoBehaviour
 {
     public Text scoreText;
     
-    public void setUp()
+    public void setUp(int score)
     {
         gameObject.SetActive(true);
-        scoreText.text = GameManagerScript.score.ToString() + " POINTS";
+        scoreText.text = "SCORE: " + score.ToString() + " POINTS";
     }
 
     public void restartButton()
@@ -21,6 +21,6 @@ public class GameOverScript : MonoBehaviour
 
     public void exitButton()
     {
-
+        SceneManager.LoadScene("pacmangame-home");
     }
 }

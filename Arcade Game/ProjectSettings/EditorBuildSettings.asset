@@ -5,7 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/angeliquescenes/pacmangame-home.unity
+    guid: 6daed320d1257474aa668e1d2d97f1a8
+  - enabled: 1
+    path: Assets/Scenes/angeliquescenes/pacmangame-info.unity
+    guid: afd9fece318b58f4083cf4d10eb5c13f
+  - enabled: 1
+    path: Assets/Scenes/aanika-pacmangame.unity
+    guid: 7f657cd3c6e57af409b1ea6183c3e46c
+  - enabled: 1
+    path: Assets/Scenes/Homescene.unity
+    guid: c061a8afd9df445ca822df45fe2f4a62
   m_configObjects: {}
