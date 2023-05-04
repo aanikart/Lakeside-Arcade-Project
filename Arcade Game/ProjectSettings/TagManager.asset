@@ -4,7 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Logic
+  - hit
+  - hurt
+  - push
   layers:
   - Default
   - TransparentFX
@@ -17,8 +19,8 @@ TagManager:
   - 'Pellet '
   - Obstacle
   - Node
-  - Hitbox
-  - Hurtbox
+  - Pushbox
+  - 
   - 
   - 
   - 
