@@ -19,9 +19,15 @@ TagManager:
   - 'Pellet '
   - Obstacle
   - Node
+<<<<<<< HEAD
   - Pushbox
   - 
   - 
+=======
+  - Hitbox
+  - Hurtbox
+  - backgroundshooting
+>>>>>>> 84e78fc1c66ea45e5bd37e01807148770a993a6c
   - 
   - 
   - 

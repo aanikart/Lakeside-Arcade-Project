@@ -46,16 +46,15 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 position = rigidbody.position;
-        Vector2 translation = direction * speed * speedMultiplier * Time.fixedDeltaTime;
+        Vector2 translation = speed * speedMultiplier * Time.fixedDeltaTime * direction;
 
         rigidbody.MovePosition(position + translation);
     }
 
     public void SetDirection(Vector2 direction, bool forced = false)
     {
-        // Only set the direction if the tile in that direction is available
-        // otherwise we set it as the next direction so it'll automatically be
-        // set when it does become available
+        // only set the direction if the tile in that direction is not occupied
+        // if occupied, set direction as next direction
         if (forced || !Occupied(direction))
         {
             this.direction = direction;
@@ -69,7 +68,8 @@ public class Movement : MonoBehaviour
 
     public bool Occupied(Vector2 direction)
     {
-        // If no collider is hit then there is no obstacle in that direction
+        // check for collider being hit
+        // if not, then there is no obstacle in that direction
         RaycastHit2D hit = Physics2D.BoxCast(transform.position, Vector2.one * 0.75f, 0f, direction, 1.5f, obstacleLayer);
         return hit.collider != null;
     }

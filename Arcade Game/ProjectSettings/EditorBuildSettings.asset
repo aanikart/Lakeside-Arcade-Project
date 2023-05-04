@@ -5,7 +5,34 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/pacmanscenes/pacmangame-home.unity
+    guid: 6daed320d1257474aa668e1d2d97f1a8
+  - enabled: 1
+    path: Assets/Scenes/pacmanscenes/pacmangame-info.unity
+    guid: afd9fece318b58f4083cf4d10eb5c13f
+  - enabled: 1
+    path: Assets/Scenes/pacmanscenes/aanika-pacmangame.unity
+    guid: 7f657cd3c6e57af409b1ea6183c3e46c
+  - enabled: 1
+    path: Assets/Scenes/Homescene.unity
+    guid: c061a8afd9df445ca822df45fe2f4a62
+  - enabled: 1
+    path: Assets/Scenes/angeliquescenes/alienhome.unity
+    guid: 33414672041f149d8ac104b92a3831b1
+  - enabled: 1
+    path: Assets/Scenes/angeliquescenes/angelique-alienshootinggame.unity
+    guid: 0c8c2c306411b487fbc673eefa92b520
+  - enabled: 1
+    path: Assets/Scenes/angeliquescenes/angeliqueinfo.unity
+    guid: 304d29a25e4a74ccdad8bc4c97082c7c
+  - enabled: 1
+    path: Assets/Scenes/teiseat-fightinggame.unity
+    guid: 1c41a920131524c46a9ce2bfea3ecd5c
+  - enabled: 1
+    path: Assets/Scenes/TitlePage.unity
+    guid: bf3965e95f5b14b648ebc87583631deb
   m_configObjects: {}
