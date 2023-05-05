@@ -126,6 +126,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 0
+  inside: {fileID: 0}
+  outside: {fileID: 0}
 --- !u!114 &-5212354693837727621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +154,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 0
+  body: {fileID: 3526555660492894816}
+  eyes: {fileID: 1943944839170493744}
+  blue: {fileID: 570286418322458993}
+  white: {fileID: 8822781300156480489}
 --- !u!114 &-2221532792911046639
 MonoBehaviour:
   m_ObjectHideFlags: 0

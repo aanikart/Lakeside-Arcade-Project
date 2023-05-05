@@ -26,7 +26,14 @@ public class GhostHome : GhostBehavior
         
     }
 
-    //
+    // make ghosts bounce up and down in ghost home
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (enabled && collision.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
+        {
+            ghost.Movement.SetDirection(-ghost.Movement.direction);
+        }
+    }
     private IEnumerator exitTransition()
     {
         ghost.Movement.SetDirection(Vector2.up, true);
