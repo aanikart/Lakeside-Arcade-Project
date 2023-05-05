@@ -5,13 +5,16 @@ public class GameManagerScript : MonoBehaviour
 {
     public Ghost[] ghosts;
     public Pacman pacman;
+    public GameOverScript gameOverScript;
     // array of Transform pellets
     public Transform pellets;
     public int pointMultiplier { get; private set; } = 1;
     public static int score { get; private set; }
     public int lives { get; private set; }
+    public static int numTickets { get; private set; }
     public Text scoreText;
     public Text livesText;
+    public Text ticketsText;
 
     private void Start()
     {
@@ -65,20 +68,24 @@ public class GameManagerScript : MonoBehaviour
             ghosts[i].gameObject.SetActive(false);
         }
 
+        numTickets = (score / 100) * 2;
+        TicketingSystem.addTickets(numTickets); 
+        print(TicketingSystem.numTickets);
         pacman.gameObject.SetActive(false);
+        gameOverScript.setUp(score, numTickets);
 
     }
 
     private void setScore(int newScore)
     {
-        score += newScore;
-        scoreText.text = score.ToString();
+        score = newScore;
+        scoreText.text = "SCORE: " + score.ToString();
     }
 
     private void setLives(int lives)
     {
         this.lives = lives;
-        livesText.text = lives.ToString();
+        livesText.text = "LIVES: " + lives.ToString();
     }
 
     // adds points to pacman score if ghost is eaten

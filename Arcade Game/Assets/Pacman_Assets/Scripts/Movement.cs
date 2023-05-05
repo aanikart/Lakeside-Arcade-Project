@@ -64,7 +64,6 @@ public class Movement : MonoBehaviour
         {
             nextDirection = direction;
         }
-        print(nextDirection);
     }
 
     public bool Occupied(Vector2 direction)
