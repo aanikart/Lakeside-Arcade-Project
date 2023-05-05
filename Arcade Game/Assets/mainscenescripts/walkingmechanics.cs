@@ -5,7 +5,7 @@ using UnityEngine;
 public class walkingmechanics : MonoBehaviour
 {
     public GameObject friend;
-    public static bool firstone = false;
+    public static bool firstone = true;
 
     //friendmove.comingfromleft
 
@@ -29,16 +29,21 @@ public class walkingmechanics : MonoBehaviour
         if (friendmove.comingfromleft == true)
         {
             spawnfriend(friend, 7f);
-            Debug.Log("spawned");
             friendmove.comingfromleft = false;
         }
 
         if (friendmove.comingfromright == true)
         {
             spawnfriend(friend, -7f);
-            Debug.Log("spawned");
             friendmove.comingfromright = false;
         }
+
+        if (GameObject.Find("Friend(Clone)") == null)
+        {
+            Debug.Log("Friend doesnt exists");
+            spawnfriend(friend, 0f);
+        }
+
     }
 
     void spawnfriend(GameObject f,float xpos)
