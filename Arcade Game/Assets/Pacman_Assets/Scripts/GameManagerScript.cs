@@ -11,8 +11,10 @@ public class GameManagerScript : MonoBehaviour
     public int pointMultiplier { get; private set; } = 1;
     public static int score { get; private set; }
     public int lives { get; private set; }
+    public static int numTickets { get; private set; }
     public Text scoreText;
     public Text livesText;
+    public Text ticketsText;
 
     private void Start()
     {
@@ -66,9 +68,11 @@ public class GameManagerScript : MonoBehaviour
             ghosts[i].gameObject.SetActive(false);
         }
 
+        numTickets = (score / 100) * 2;
+        TicketingSystem.addTickets(numTickets); 
+        print(TicketingSystem.numTickets);
         pacman.gameObject.SetActive(false);
-        gameOverScript.setUp(score);
-        
+        gameOverScript.setUp(score, numTickets);
 
     }
 
