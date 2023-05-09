@@ -122,7 +122,7 @@ public class playercontroller : MonoBehaviour
 
     public void GameOver()
     {
-        gameover.Setup(scorescript.scoreValue);
+        gameover.Setup(scorescript.scoreValue, scorescript.ticketnumber);
     }
 
 }
