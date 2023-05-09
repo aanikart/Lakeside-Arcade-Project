@@ -8,12 +8,15 @@ public class gameover : MonoBehaviour
 {
 
     public Text pointstext;
+    public Text tickettext;
 
 
-    public void Setup(int score)
+    public void Setup(int score, int ticket)
     {
         gameObject.SetActive(true);
         pointstext.text = score.ToString() + " POINTS";
+        tickettext.text = ticket.ToString() + "  TICKETS";
+        Debug.Log(ticket);
     }
 
     public void restartbutton()
