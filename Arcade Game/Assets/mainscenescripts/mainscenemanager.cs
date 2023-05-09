@@ -26,7 +26,8 @@ public class mainscenemanager : MonoBehaviour
 
     public void setNumTickets()
     {
-        ticketsText.text = "YOU HAVE:  " + TicketingSystem.numTickets.ToString() + "  TICKETS";
+        int tickets = TicketingSystem.numTickets;
+        ticketsText.text = "YOU HAVE:  " + tickets.ToString() + "  TICKETS";
 
     }
     
