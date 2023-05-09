@@ -8,6 +8,14 @@ public class greenfightscript : MonoBehaviour
     public Rigidbody2D rb;
     public float runSpeed = 40f;
     public float jumpAmount = 70;
+    public Collider2D hit;
+    public Collider2D hurt;
+    public Collider2D push;
+    public Collider2D enemyhit;
+    public Collider2D enemyhurt;
+    public Collider2D enemypush;
+    public int health = 10;
+    public int maxhealth = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -82,8 +90,14 @@ public class greenfightscript : MonoBehaviour
         }
         
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
         Debug.Log("hit");
+        health--;
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        rb.velocity = Vector2.zero;
+        Debug.Log("stop");
     }
 }
