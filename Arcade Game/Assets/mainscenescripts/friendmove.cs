@@ -34,7 +34,7 @@ public class friendmove : MonoBehaviour
     {
         if (Input.GetAxisRaw("Horizontal") > 0f)
         {
-            Vector3 temp = new Vector3(transform.position.x, -3f, 0);
+            Vector3 temp = new Vector3(transform.position.x, -3.5f, 0);
 
             temp.x += speed * Time.deltaTime;       
 
@@ -68,13 +68,13 @@ public class friendmove : MonoBehaviour
         {
             anim.SetFloat("speed", 0f);
             
-            transform.position = new Vector3(transform.position.x, -3f, 0);
+            transform.position = new Vector3(transform.position.x, -3.5f, 0);
 
         }
 
         else if (Input.GetAxisRaw("Horizontal") < 0f)
         {
-            Vector3 temp = new Vector3(transform.position.x, -3f, 0);
+            Vector3 temp = new Vector3(transform.position.x, -3.5f, 0);
 
             temp.x -= speed * Time.deltaTime;
             anim.SetFloat("speed", -2f);
