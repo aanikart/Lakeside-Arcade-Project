@@ -56,6 +56,15 @@ public class friendmove : MonoBehaviour
 
                 if (sceneName == "Homescene")
                 {
+                    comingfromright = true;
+
+                    SceneManager.LoadScene("Store");
+                    //temp.x = maxx;
+                }
+
+                if (sceneName == "Store")
+                {
+                   
                     temp.x = maxx;
                 }
             }
@@ -94,6 +103,11 @@ public class friendmove : MonoBehaviour
                 if (sceneName == "TitlePage")
                 {
                     temp.x = minx;
+                }
+                if (sceneName == "Store")
+                {
+                    SceneManager.LoadScene("Homescene");
+                    comingfromleft = true;
                 }
 
             }
