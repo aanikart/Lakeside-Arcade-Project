@@ -10,7 +10,7 @@ public class mainscenemanager : MonoBehaviour
     public Text ticketsText;
     public void shooting()
     {
-       SceneManager.LoadScene("alienhome");
+        SceneManager.LoadScene("alienhome");
 
     }
 
@@ -28,7 +28,6 @@ public class mainscenemanager : MonoBehaviour
     {
         int tickets = TicketingSystem.numTickets;
         ticketsText.text = "YOU HAVE:  " + tickets.ToString() + "  TICKETS";
-
     }
     
 }
