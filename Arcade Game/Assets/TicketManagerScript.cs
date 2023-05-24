@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class TicketManagerScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public MainSceneManagerScript mainscenemanager;
+
+    private void Start()
     {
-        
+        displayTickets();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void displayTickets()
     {
-        
+        mainscenemanager.setNumTickets(TicketingSystem.numTickets);
     }
+
 }
