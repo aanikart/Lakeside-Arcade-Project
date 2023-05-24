@@ -30,7 +30,7 @@ public class scorescript : MonoBehaviour
     void Update()
     {
         score.text = "Score: " + scoreValue;
-        ticketnumber = scoreValue / 10;
+        ticketnumber = scoreValue / 20;
         
         
         
