@@ -104,7 +104,7 @@ NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
+    serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -117,7 +117,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    buildHeightMesh: 0
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -438,6 +438,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -515,11 +516,10 @@ MonoBehaviour:
   m_Text: "Galaxy  fire  is  an  exciting  shooting  game  where  you  can  take 
     the  form  of  a  purple  spaceship  on  a  quest  to  defeat  the  evil  aliens. 
     Press  W  and  S  to  move  up  and  down,  and  the  spacebar  to  shoot.  Careful
-    !  The  enemy  aliens  shoot  back,  so  dodge  their  lasers  while  still 
-    trying  to  destroy  them.  Watch  out  for  the  floating  asteroids,  and 
-    don\u2019t  let  enemy  aliens  or  asteroids  hit  your  ship,  or  else  its 
-    game  over!  Hit  enemy  aliens  for  100  points,  and  asteroids  for  50. 
-    Godspeed ! "
+    !  The  enemy  aliens  shoot  back,  so  dodge  their  lasers.  Watch  out  for 
+    the  floating  asteroids,  and  don\u2019t  let  enemy  aliens  or  asteroids 
+    hit  your  ship,  or  else  its  game  over!  Hit  enemy  aliens  for  100  points, 
+    and  asteroids  for  50.  Godspeed ! "
 --- !u!222 &935599589
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -761,9 +761,17 @@ Camera:
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
