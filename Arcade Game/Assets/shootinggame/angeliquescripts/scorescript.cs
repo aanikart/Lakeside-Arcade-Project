@@ -31,15 +31,11 @@ public class scorescript : MonoBehaviour
     {
         score.text = "Score: " + scoreValue;
         ticketnumber = scoreValue / 20;
-        
-        
-        
     }
 
     public void addscore(int scoretoadd)
     {
         scoreValue += scoretoadd;
-        Debug.Log(scoreValue);
     }
 
 }
