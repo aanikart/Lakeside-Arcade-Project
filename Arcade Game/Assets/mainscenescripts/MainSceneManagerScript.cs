@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class mainscenemanager : MonoBehaviour
+public class MainSceneManagerScript : MonoBehaviour
 
 {
     public Text ticketsText;
@@ -24,10 +24,9 @@ public class mainscenemanager : MonoBehaviour
         SceneManager.LoadScene("pacmangame-home");
     }
 
-    public void setNumTickets()
+    public void setNumTickets(int numTickets)
     {
-        int tickets = TicketingSystem.numTickets;
-        ticketsText.text = "YOU HAVE:  " + tickets.ToString() + "  TICKETS";
+        ticketsText.text = numTickets.ToString() + "  TICKETS";
     }
     
 }

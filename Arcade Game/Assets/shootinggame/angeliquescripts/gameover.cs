@@ -16,7 +16,8 @@ public class gameover : MonoBehaviour
         gameObject.SetActive(true);
         pointstext.text = score.ToString() + " POINTS";
         tickettext.text = ticket.ToString() + "  TICKETS";
-        Debug.Log(ticket);
+        // add tickets earned to user's total number of tickets
+        TicketingSystem.addTickets(ticket);
     }
 
     public void restartbutton()

@@ -28,7 +28,6 @@ public class audioscript : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
-        Debug.Log(sceneName);
         if (sceneName == "alienhome" || sceneName == "pacmangame-home" || sceneName == "teiseat-fightinggame")
         { 
             Destroy(gameObject);

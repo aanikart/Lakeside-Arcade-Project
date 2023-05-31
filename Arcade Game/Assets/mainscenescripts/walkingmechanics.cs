@@ -40,7 +40,6 @@ public class walkingmechanics : MonoBehaviour
 
         if (GameObject.Find("Friend(Clone)") == null)
         {
-            Debug.Log("Friend doesnt exists");
             spawnfriend(friend, 0f);
         }
 
