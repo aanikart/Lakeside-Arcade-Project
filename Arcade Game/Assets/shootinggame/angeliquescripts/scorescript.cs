@@ -7,6 +7,8 @@ public class scorescript : MonoBehaviour
 {
     public Text score;
     public static int scoreValue;
+    public static int ticketnumber;
+    public Text tickets;
 
     public gameover gameover;
 
@@ -20,24 +22,20 @@ public class scorescript : MonoBehaviour
 
     public void GameOver()
     {
-        gameover.Setup(scoreValue);
+        gameover.Setup(scoreValue,ticketnumber);
     }
 
     // Update is called once per frame
 
     void Update()
     {
-        
-
         score.text = "Score: " + scoreValue;
-
-        
+        ticketnumber = scoreValue / 20;
     }
 
     public void addscore(int scoretoadd)
     {
         scoreValue += scoretoadd;
-        Debug.Log(scoreValue);
     }
 
 }

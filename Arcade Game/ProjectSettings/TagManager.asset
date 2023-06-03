@@ -11,6 +11,7 @@ TagManager:
   - 
   - Water
   - UI
+<<<<<<< HEAD
   - 
   - 
   - 
@@ -19,6 +20,16 @@ TagManager:
   - 
   - 
   - 
+=======
+  - Pacman
+  - Ghost
+  - 'Pellet '
+  - Obstacle
+  - Node
+  - Pushbox
+  - Hitbox
+  - Hurtbox
+  - backgroundshooting
   - 
   - 
   - 
