@@ -11,16 +11,6 @@ TagManager:
   - 
   - Water
   - UI
-<<<<<<< HEAD
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-=======
   - Pacman
   - Ghost
   - 'Pellet '
@@ -30,24 +20,8 @@ TagManager:
   - Hitbox
   - Hurtbox
   - backgroundshooting
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+
+
   m_SortingLayers:
   - name: Default
     uniqueID: 0
