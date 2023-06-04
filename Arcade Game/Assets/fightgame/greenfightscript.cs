@@ -16,6 +16,8 @@ public class greenfightscript : MonoBehaviour
     public Collider2D enemypush;
     public int health = 10;
     public int maxhealth = 10;
+    public int score = 0;
+    public fightscript fightscript;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +53,7 @@ public class greenfightscript : MonoBehaviour
         if (transform.position.y >= (2.75))
         {
             gameObject.transform.position = new Vector3(transform.position.x, (float)2.7, 0);
+            rb.AddForce(Vector2.down);
         }
         if (Input.GetKeyDown(KeyCode.I))
         {
@@ -92,8 +95,13 @@ public class greenfightscript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log("hit");
-        health--;
+        if (collider == enemyhit)
+        {
+            Debug.Log("hit");
+            health--;
+            score = score + 100;
+            fightscript.score = fightscript.score - 100;
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

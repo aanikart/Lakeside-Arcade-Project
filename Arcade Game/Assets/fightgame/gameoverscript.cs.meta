@@ -1,12 +1,9 @@
 fileFormatVersion: 2
-guid: a4f360cb865859c44a3a843caf5c2f3b
+guid: bfc9134f65b3bd241be40e10a45880fb
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - greenfightscript: {instanceID: 0}
-  - fillImage: {instanceID: 0}
-  - gameOver: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

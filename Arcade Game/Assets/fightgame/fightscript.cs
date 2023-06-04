@@ -16,6 +16,8 @@ public class fightscript : MonoBehaviour
     public Collider2D enemypush;
     public int health = 10;
     public int maxhealth = 10;
+    public int score = 0;
+    public greenfightscript greenfightscript;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,7 +61,6 @@ public class fightscript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             animator.SetBool("isLPunching", true);
-            //Collider2D[] enemies = Physics2D.OverlapCircleAll(lpointpunch,lpunchrange,ene)
         }
         if (Input.GetKeyUp(KeyCode.E))
         {
@@ -92,8 +93,13 @@ public class fightscript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log("hit");
-        health--;
+        if (collider == enemyhit)
+        {
+            Debug.Log("hit");
+            health--;
+            score = score + 100;
+            greenfightscript.score = greenfightscript.score - 100;
+        }    
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
