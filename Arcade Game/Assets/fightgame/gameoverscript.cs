@@ -21,13 +21,17 @@ public class gameoverscript : MonoBehaviour
         if (fightscript.health <= 0)
         {
             gameOver.SetActive(true);
-            scoretext.text = "You have " + fightscript.score.ToString() + " tickets";
+            scoretext.text = "YOU HAVE " + (fightscript.score/100).ToString() + " TICKETS";
+            // add tickets to overall number of tickets
+            TicketingSystem.addTickets((fightscript.score/100));
         }
 
         if (greenfightscript.health <= 0)
         {
             gameOver.SetActive(true);
-            scoretext.text = "You have " + greenfightscript.score.ToString() + " tickets";
+            scoretext.text = "YOU HAVE " + (fightscript.score/100).ToString() + " TICKETS";
+            // add tickets to overall number of tickets
+            TicketingSystem.addTickets(fightscript.score/100);
         }
     }
 }

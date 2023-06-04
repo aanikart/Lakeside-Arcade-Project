@@ -68,7 +68,7 @@ public class GameManagerScript : MonoBehaviour
             ghosts[i].gameObject.SetActive(false);
         }
 
-        numTickets = (score / 100) * 2;
+        numTickets = (score / 100);
         TicketingSystem.addTickets(numTickets); 
         print(TicketingSystem.numTickets);
         pacman.gameObject.SetActive(false);
