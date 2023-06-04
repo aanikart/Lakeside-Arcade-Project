@@ -9,9 +9,12 @@ public class gameoverscript : MonoBehaviour
     public greenfightscript greenfightscript;
     public GameObject gameOver;
     public Text scoretext;
+    public static bool isplayerdead;
+
     // Start is called before the first frame update
     void Start()
     {
+        isplayerdead = false;
         
     }
 
@@ -20,7 +23,10 @@ public class gameoverscript : MonoBehaviour
     {
         if (fightscript.health <= 0)
         {
+            isplayerdead = true;
             gameOver.SetActive(true);
+            //Debug.Log("gameover");
+
             scoretext.text = "YOU HAVE " + (fightscript.score/100).ToString() + " TICKETS";
             // add tickets to overall number of tickets
             TicketingSystem.addTickets((fightscript.score/100));
@@ -28,7 +34,10 @@ public class gameoverscript : MonoBehaviour
 
         if (greenfightscript.health <= 0)
         {
+            isplayerdead = true;
             gameOver.SetActive(true);
+            //Debug.Log("gameover");
+
             scoretext.text = "YOU HAVE " + (fightscript.score/100).ToString() + " TICKETS";
             // add tickets to overall number of tickets
             TicketingSystem.addTickets(fightscript.score/100);
