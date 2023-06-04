@@ -21,16 +21,16 @@ EditorBuildSettings:
     path: Assets/Scenes/Homescene.unity
     guid: c061a8afd9df445ca822df45fe2f4a62
   - enabled: 1
-    path: Assets/Scenes/angeliquescenes/alienhome.unity
+    path: Assets/Scenes/shootinggamescenes/alienhome.unity
     guid: 33414672041f149d8ac104b92a3831b1
   - enabled: 1
-    path: Assets/Scenes/angeliquescenes/angelique-alienshootinggame.unity
+    path: Assets/Scenes/shootinggamescenes/angelique-alienshootinggame.unity
     guid: 0c8c2c306411b487fbc673eefa92b520
   - enabled: 1
-    path: Assets/Scenes/angeliquescenes/angeliqueinfo.unity
+    path: Assets/Scenes/shootinggamescenes/angeliqueinfo.unity
     guid: 304d29a25e4a74ccdad8bc4c97082c7c
   - enabled: 1
-    path: Assets/Scenes/teiseat-fightinggame.unity
+    path: Assets/Scenes/fightinggamescenes/teiseat-fightinggame.unity
     guid: 1c41a920131524c46a9ce2bfea3ecd5c
   - enabled: 1
     path: Assets/Scenes/TitlePage.unity

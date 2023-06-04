@@ -11,32 +11,16 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Pacman
+  - Ghost
+  - 'Pellet '
+  - Obstacle
+  - Node
+  - Pushbox
+  - Hitbox
+  - Hurtbox
+  - backgroundshooting
+
   m_SortingLayers:
   - name: Default
     uniqueID: 0
