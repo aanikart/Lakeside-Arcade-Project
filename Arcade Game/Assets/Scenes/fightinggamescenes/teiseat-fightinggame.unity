@@ -296,11 +296,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc9134f65b3bd241be40e10a45880fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fightscript: {fileID: 562904827}
-  greenfightscript: {fileID: 1416507772}
-  gameOver: {fileID: 1248977273}
-  scoretext: {fileID: 799140389}
-  ticketstext: {fileID: 2115447768}
 --- !u!4 &202734592
 Transform:
   m_ObjectHideFlags: 0
@@ -767,8 +762,8 @@ MonoBehaviour:
   health: 10
   maxhealth: 10
   score: 0
+  isplayerdead: {fileID: 0}
   greenfightscript: {fileID: 1416507772}
-  gameoverscript: {fileID: 202734591}
 --- !u!224 &562904828
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1451,7 +1446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1248977274
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1708,8 +1703,8 @@ MonoBehaviour:
   health: 10
   maxhealth: 10
   score: 0
+  isplayerdead: {fileID: 0}
   fightscript: {fileID: 562904827}
-  gameoverscript: {fileID: 202734591}
 --- !u!95 &1416507773
 Animator:
   serializedVersion: 5
