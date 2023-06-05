@@ -17,97 +17,110 @@ public class fightscript : MonoBehaviour
     public int health = 10;
     public int maxhealth = 10;
     public int score = 0;
+
+    public gameoverscript isplayerdead;
+
     public greenfightscript greenfightscript;
-    public gameoverscript gameoverscript;
-    // Start is called before the first frame update
-    void Start()
-    {
-      
-    }
 
     // Update is called once per frame
     void Update()
     {
-        float h = Input.GetAxis("Horizontal") * runSpeed;
-        //float v = Input.GetAxis("Vertical") * jumpAmount;
-        gameObject.transform.Translate(h* Time.deltaTime,0, 0);
-        if (transform.position.x <= (-9.8))
+
+
+        if (gameoverscript.isplayerdead == false)
         {
-            gameObject.transform.position = new Vector3((float)-9.79, (float)-1.75, 0);
+
+            float h = Input.GetAxis("Horizontal") * runSpeed;
+            //float v = Input.GetAxis("Vertical") * jumpAmount;
+            gameObject.transform.Translate(h * Time.deltaTime, 0, 0);
+            if (transform.position.x <= (-9.8))
+            {
+                gameObject.transform.position = new Vector3((float)-9.79, (float)-1.75, 0);
+            }
+            if (transform.position.x >= (9.8))
+            {
+                gameObject.transform.position = new Vector3((float)9.79, (float)-1.75, 0);
+            }
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                gameObject.transform.localScale = new Vector3(-15, 15, 0);
+            }
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                gameObject.transform.localScale = new Vector3(15, 15, 0);
+            }
+            if (transform.position.y <= (-1.75))
+            {
+                gameObject.transform.position = new Vector3(transform.position.x, (float)-1.75, 0);
+            }
+            if (transform.position.y >= (2.75))
+            {
+                gameObject.transform.position = new Vector3(transform.position.x, (float)2.75, 0);
+            }
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
+            }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                animator.SetBool("isLPunching", true);
+            }
+            if (Input.GetKeyUp(KeyCode.E))
+            {
+                animator.SetBool("isLPunching", false);
+            }
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                animator.SetBool("isRPunching", true);
+            }
+            if (Input.GetKeyUp(KeyCode.R))
+            {
+                animator.SetBool("isRPunching", false);
+            }
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                animator.SetBool("isLKicking", true);
+            }
+            if (Input.GetKeyUp(KeyCode.X))
+            {
+                animator.SetBool("isLKicking", false);
+            }
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                animator.SetBool("isRKicking", true);
+            }
+            if (Input.GetKeyUp(KeyCode.C))
+            {
+                animator.SetBool("isRKicking", false);
+            }
         }
-        if (transform.position.x >= (9.8))
+        else
         {
-            gameObject.transform.position = new Vector3((float)9.79, (float)-1.75, 0);
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            gameObject.transform.localScale = new Vector3(-15, 15, 0);
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            gameObject.transform.localScale = new Vector3(15, 15, 0);
-        }
-        if (transform.position.y <= (-1.75))
-        {
-            gameObject.transform.position = new Vector3(transform.position.x, (float)-1.75, 0);
-        }
-        if (transform.position.y >= (2.75))
-        {
-            gameObject.transform.position = new Vector3(transform.position.x, (float)2.75, 0);
-        }      
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            rb.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            animator.SetBool("isLPunching", true);
-        }
-        if (Input.GetKeyUp(KeyCode.E))
-        {
+            gameObject.transform.position = new Vector3(-3.59f, -1.75f, 0);
+            animator.SetBool("isRKicking", false);
+            animator.SetBool("isLKicking", false);
+            animator.SetBool("isRPunching", false);
             animator.SetBool("isLPunching", false);
         }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            animator.SetBool("isRPunching", true);
-        }
-        if (Input.GetKeyUp(KeyCode.R))
-        {
-            animator.SetBool("isRPunching", false);
-        }
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            animator.SetBool("isLKicking", true);
-        }
-        if (Input.GetKeyUp(KeyCode.X))
-        {
-            animator.SetBool("isLKicking", false);
-        }
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            animator.SetBool("isRKicking", true);
-        }
-        if (Input.GetKeyUp(KeyCode.C))
-        {
-            animator.SetBool("isRKicking", false);
-        }
     }
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider == enemyhit)
+        if (isplayerdead == false)
         {
-            health--;
-            score = score + 100;
-            greenfightscript.score = greenfightscript.score - 100;
-            if (health == 0)
+            if (collider == enemyhit)
             {
-                gameoverscript.setUp(score);
+                Debug.Log("hit");
+                health--;
+                score = score + 100;
+                greenfightscript.score = greenfightscript.score - 100;
             }
-        }    
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
         rb.velocity = Vector2.zero;
+
     }
 }
-
