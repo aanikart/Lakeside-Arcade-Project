@@ -1,4 +1,4 @@
-<<<<<<< HEAD:Arcade Game/Assets/fightgame/fightscript.cs
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
