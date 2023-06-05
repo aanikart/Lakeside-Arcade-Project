@@ -267,7 +267,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 166902580}
   m_CullTransparentMesh: 0
---- !u!1 &202734590
+--- !u!1 &184993211
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -275,8 +275,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 202734592}
-  - component: {fileID: 202734591}
+  - component: {fileID: 184993213}
   m_Layer: 0
   m_Name: GameOver
   m_TagString: Untagged
@@ -284,32 +283,15 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &202734591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 202734590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfc9134f65b3bd241be40e10a45880fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fightscript: {fileID: 562904827}
-  greenfightscript: {fileID: 1416507772}
-  gameOver: {fileID: 1248977273}
-  scoretext: {fileID: 799140389}
-  ticketstext: {fileID: 2115447768}
---- !u!4 &202734592
+--- !u!4 &184993213
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 202734590}
+  m_GameObject: {fileID: 184993211}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 343.34128, y: 152.20047, z: -1.9594042}
+  m_LocalPosition: {x: 1326.3177, y: 439.2541, z: -0.9680142}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -767,8 +749,8 @@ MonoBehaviour:
   health: 10
   maxhealth: 10
   score: 0
+  isplayerdead: {fileID: 0}
   greenfightscript: {fileID: 1416507772}
-  gameoverscript: {fileID: 202734591}
 --- !u!224 &562904828
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1561,9 +1543,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 202734591}
+      - m_Target: {fileID: 184993211}
         m_TargetAssemblyTypeName: gameoverscript, Assembly-CSharp
-        m_MethodName: restartbutton
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1708,8 +1690,8 @@ MonoBehaviour:
   health: 10
   maxhealth: 10
   score: 0
+  isplayerdead: {fileID: 0}
   fightscript: {fileID: 562904827}
-  gameoverscript: {fileID: 202734591}
 --- !u!95 &1416507773
 Animator:
   serializedVersion: 5
@@ -1969,7 +1951,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 202734591}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: gameoverscript, Assembly-CSharp
         m_MethodName: exitbutton
         m_Mode: 1
