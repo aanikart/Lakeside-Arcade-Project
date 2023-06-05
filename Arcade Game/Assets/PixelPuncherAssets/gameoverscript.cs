@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class gameoverscript : MonoBehaviour
@@ -10,23 +9,38 @@ public class gameoverscript : MonoBehaviour
     public greenfightscript greenfightscript;
     public GameObject gameOver;
     public Text scoretext;
-    public Text ticketstext;
+    public static bool isplayerdead;
 
-    public void setUp(int score)
+    // Start is called before the first frame update
+    void Start()
     {
-        gameOver.SetActive(true);
-        scoretext.text = "SCORE: " + score.ToString() + " POINTS";
-        ticketstext.text = "YOU EARNED:  " + (score/100).ToString() + "  TICKETS";
-        TicketingSystem.addTickets(score / 100);
+        isplayerdead = false;
+        
     }
 
-    public void restartbutton()
+    // Update is called once per frame
+    void Update()
     {
-        SceneManager.LoadScene("teiseat-fightinggame");
-    }
+        if (fightscript.health <= 0)
+        {
+            isplayerdead = true;
+            gameOver.SetActive(true);
+            //Debug.Log("gameover");
 
-    public void exitbutton()
-    {
-        SceneManager.LoadScene("Homescene");
+            scoretext.text = "YOU HAVE " + (fightscript.score/100).ToString() + " TICKETS";
+            // add tickets to overall number of tickets
+            TicketingSystem.addTickets((fightscript.score/100));
+        }
+
+        if (greenfightscript.health <= 0)
+        {
+            isplayerdead = true;
+            gameOver.SetActive(true);
+            //Debug.Log("gameover");
+
+            scoretext.text = "YOU HAVE " + (fightscript.score/100).ToString() + " TICKETS";
+            // add tickets to overall number of tickets
+            TicketingSystem.addTickets(fightscript.score/100);
+        }
     }
 }
