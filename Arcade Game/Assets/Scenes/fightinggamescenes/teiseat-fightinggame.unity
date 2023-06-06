@@ -2585,13 +2585,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4f360cb865859c44a3a843caf5c2f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  greenfightscript: {fileID: 0}
-  fillImage: {fileID: 0}
-=======
   greenfightscript: {fileID: 1416507772}
   fillImage: {fileID: 1085537773}
->>>>>>> 45c1828171e846b323d9dd272ef109acb87e2ba1
 --- !u!114 &1975038109
 MonoBehaviour:
   m_ObjectHideFlags: 0

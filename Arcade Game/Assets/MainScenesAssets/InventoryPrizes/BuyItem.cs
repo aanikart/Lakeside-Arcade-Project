@@ -26,11 +26,12 @@ public class BuyItem : MonoBehaviour
             Pickup();
             InventoryManager.Instance.ListItems();
             TicketingSystem.numTickets -= Item.value;
-            
-        }  
-            TicketingSystem.numTickets -= Item.value;
             Destroy(ticketText);
             Destroy(ticketImage);
+
+        }  
+
+
         }
         
     }

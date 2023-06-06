@@ -16,7 +16,7 @@ public class MainSceneManagerScript : MonoBehaviour
 
     public void fighting()
     {
-        SceneManager.LoadScene("teiseat-fightinggame");
+        SceneManager.LoadScene("puncherhome");
     }
 
     public void pacman()

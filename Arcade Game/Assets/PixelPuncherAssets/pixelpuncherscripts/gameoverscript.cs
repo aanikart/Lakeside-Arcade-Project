@@ -8,6 +8,7 @@ public class gameoverscript : MonoBehaviour
 {
     public fightscript fightscript;
     public greenfightscript greenfightscript;
+
     public GameObject gameOver;
     public Text scoretext;
     public static bool isplayerdead;
@@ -16,7 +17,6 @@ public class gameoverscript : MonoBehaviour
     void Start()
     {
         isplayerdead = false;
-
     }
 
 
@@ -31,6 +31,7 @@ public class gameoverscript : MonoBehaviour
             scoretext.text = "YOU HAVE " + Mathf.Abs(fightscript.score / 100).ToString() + " TICKETS";
             // add tickets to overall number of tickets
             TicketingSystem.addTickets((fightscript.score / 100));
+            print(TicketingSystem.numTickets);
         }
 
         if (greenfightscript.health <= 0)
