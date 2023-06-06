@@ -18,7 +18,7 @@ public class fightscript : MonoBehaviour
     public int maxhealth = 10;
     public int score = 0;
 
-    public gameoverscript isplayerdead;
+    public gameoverscript gameoverscript;
 
     public greenfightscript greenfightscript;
 
@@ -106,21 +106,21 @@ public class fightscript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (isplayerdead == false)
         {
+
             if (collider == enemyhit)
             {
-                Debug.Log("hit");
+                print(health);
                 health--;
                 score = score + 100;
                 greenfightscript.score = greenfightscript.score - 100;
+                if (health <= 0)
+                {
+                    gameObject.SetActive(false);
+                    gameoverscript.setUp((score / 100), score);
+                }
+
             }
         }
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-
-        rb.velocity = Vector2.zero;
-
     }
 }
