@@ -1,4 +1,4 @@
-// WRITTEN BY AANIKA
+
 
 using System;
 using System.Collections;
@@ -20,12 +20,13 @@ public class AnimatedSprite : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
+    // calls advanceFrame in animationTime seconds repeatedly every repeatRate
     private void Start()
     {
-        InvokeRepeating(nameof(AdvanceFrame), animationTime, repeatRate);
+        InvokeRepeating(nameof(advanceFrame), animationTime, repeatRate);
     }
 
-    private void AdvanceFrame()
+    private void advanceFrame()
     {
         if (!spriteRenderer.enabled)
         {
@@ -50,11 +51,12 @@ public class AnimatedSprite : MonoBehaviour
         }
     }
 
-    public void Restart()
+    // restarts looping from first sprite in array of sprites 
+    public void restart()
     {
         animationFrame = -1;
 
-        AdvanceFrame();
+        advanceFrame();
     }
 
 }

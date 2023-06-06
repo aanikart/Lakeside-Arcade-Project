@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+// music from https://pixabay.com/music/search/8bit/ - Pixel Perfect by Lesiakower
+
 public class GameManagerScript : MonoBehaviour
 {
     public Ghost[] ghosts;
@@ -122,6 +124,7 @@ public class GameManagerScript : MonoBehaviour
         pellet.gameObject.SetActive(false);
         setScore(score + pellet.points);
 
+        // if all pellets are eaten, start new round
         if (!hasRemainingPellets())
         {
             pacman.gameObject.SetActive(false);
@@ -137,10 +140,12 @@ public class GameManagerScript : MonoBehaviour
         }
         
         pelletEaten(pellet);
+        // power pellets have longer duration of pointMultiplier
         CancelInvoke(nameof(resetPointMultipler));
         Invoke(nameof(resetPointMultipler), pellet.duration);
     }
 
+    // checks for if pellet is active or not
     private bool hasRemainingPellets()
 
     {

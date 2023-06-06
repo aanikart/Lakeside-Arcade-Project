@@ -346,8 +346,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You  are  a  purple  pixel  blob  called  pacman.  Eat pellets  to  survive  
-    and  beware  of  hungry ghosts!
+  m_Text: You  are  a  purple  pixel  blob  called  pacman.  Eat pellets  until you 
+    run out of  lives  and  beware  of  hungry ghosts!
 --- !u!222 &130437790
 CanvasRenderer:
   m_ObjectHideFlags: 0

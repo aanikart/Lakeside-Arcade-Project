@@ -21,6 +21,7 @@ public class MainMenuScript : MonoBehaviour
         SceneManager.LoadScene("Homescene");
     }
 
+    // backbutton in infoscreen
     public void backtoHome()
     {
         SceneManager.LoadScene("pacmangame-home");

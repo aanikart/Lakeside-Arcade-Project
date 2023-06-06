@@ -21,10 +21,10 @@ public class Movement : MonoBehaviour
 
     private void Start()
     {
-        ResetState();
+        resetState();
     }
 
-    public void ResetState()
+    public void resetState()
     {
         speedMultiplier = 1f;
         direction = initialDirection;
@@ -43,9 +43,11 @@ public class Movement : MonoBehaviour
         }
     }
 
+    // is called at a fixed rate
     private void FixedUpdate()
     {
         Vector2 position = rigidbody.position;
+        // displacement = velocity * time
         Vector2 translation = speed * speedMultiplier * Time.fixedDeltaTime * direction;
 
         rigidbody.MovePosition(position + translation);
