@@ -14,6 +14,6 @@ public class StoreTicketManager : MonoBehaviour
 
     public void displayTickets()
     {
-        ticketsText.text = TicketingSystem.numTickets.ToString() + " TICKETS";
+        ticketsText.text = TicketingSystem.numTickets.ToString();
     }
 }
