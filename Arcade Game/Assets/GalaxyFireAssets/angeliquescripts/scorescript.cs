@@ -12,7 +12,7 @@ public class scorescript : MonoBehaviour
 
     public gameover gameover;
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         score.GetComponent<Text>();
@@ -25,7 +25,7 @@ public class scorescript : MonoBehaviour
         gameover.Setup(scoreValue,ticketnumber);
     }
 
-    // Update is called once per frame
+    
 
     void Update()
     {

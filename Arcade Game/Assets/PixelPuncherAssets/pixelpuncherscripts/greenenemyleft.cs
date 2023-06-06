@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class greenenemy : MonoBehaviour
+public class greenenemyleft : MonoBehaviour
 {
 
     public GameObject enemy;
@@ -13,7 +13,7 @@ public class greenenemy : MonoBehaviour
     public Rigidbody2D rigidBody2D;
 
     private Animator anim;
-    //public bool hit;
+
 
     public float deactivateTimer = 10f;
 
@@ -22,69 +22,65 @@ public class greenenemy : MonoBehaviour
     public bool alreadyplayed = false;
 
     AudioSource audiogreen;
-    public GameObject mainplayer;
 
-    public Transform playertransform;
+    public Transform mainPlayer;
+  
+
+    public float fightdistance;
+    
+    public bool isattacking;
+
+    
 
     // Start is called before the first frame update
+
     void Start()
     {
+        isattacking = false;
         rigidBody2D = GetComponent<Rigidbody2D>();
-
+       
+        
         //hit = false;
         anim = GetComponent<Animator>();
-        Invoke("Deactivate", deactivateTimer);
+        //Invoke("Deactivate", deactivateTimer);
 
         audiogreen = GetComponent<AudioSource>();
+
+        fightdistance = 1f;
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        move(enemy);
-        //Debug.Log(health);
+       
+        
+            move(enemy);
+        
+   
+        attackplayer();
+        
         if (health <= 0)
         {
-            //hit = true;
-            
-            /*
-            if (!alreadyplayed)
-            {
-                audiogreen.PlayOneShot(pointup, 1);
-                alreadyplayed = true;
-            }
-
-            */
 
             Invoke("Deactivateenemy", 0.2f);
-
-            
-            
-
 
         }
     }
 
     void move(GameObject enemy)
     {
-        if(transform.position.x > playertransform.position.x)
-        {
-            enemy.transform.Translate(Vector3.left * speed * Time.deltaTime);
-            gameObject.transform.localScale = new Vector3(-6, 6, 1);
 
-
-        }
-        if (transform.position.x < playertransform.position.x)
+        if (isattacking == false)
         {
-            enemy.transform.Translate(Vector3.right * speed * Time.deltaTime);
             
+            enemy.transform.Translate(Vector3.right * speed * Time.deltaTime);
+            gameObject.transform.localScale = new Vector3(6, 6, 1);
 
         }
-
     }
 
-    void Deactivate()
+    void Deactivateenemy()
     {
         gameObject.SetActive(false);
     }
@@ -97,10 +93,21 @@ public class greenenemy : MonoBehaviour
         Debug.Log("Damage Taken");
     }
 
-    void Deactivateenemy()
-    {
-        gameObject.SetActive(false);
+    
 
+    void attackplayer()
+    {
+       
+        if (Vector2.Distance(transform.position, mainPlayer.transform.position) < fightdistance)
+        {
+            isattacking = true;
+            
+            anim.SetTrigger("lefttrigger");
+            
+            Debug.Log("attacking player");
+            
+        }
+        isattacking = false;
     }
 
 }

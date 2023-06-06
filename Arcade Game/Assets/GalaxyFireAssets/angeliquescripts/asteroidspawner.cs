@@ -10,13 +10,14 @@ public class asteroidspawner : MonoBehaviour
 
 
 
-    // Start is called before the first frame update
+    
     void Start()
     {
+        // spawns after certain period of time
         StartCoroutine(spawntimer());
     }
 
-    // Update is called once per frame
+  
     void Update()
     {
         transform.Rotate(Vector3.left, 1);
@@ -24,8 +25,10 @@ public class asteroidspawner : MonoBehaviour
 
     IEnumerator spawntimer()
     {
+        // finds random y position to spawn asteroid
         float spawnY = Random.Range(min, max);
 
+        //spawns every 4 seconds
         yield return new WaitForSeconds(4);
         Instantiate(asteroid, new Vector3(11, spawnY, 0), Quaternion.identity);
 

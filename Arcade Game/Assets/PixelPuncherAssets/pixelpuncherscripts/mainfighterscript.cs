@@ -99,7 +99,7 @@ public class mainfighterscript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             
-            Debug.Log("Space");
+            
             if (canattack == true)
             {
                 canattack = false;
@@ -110,10 +110,11 @@ public class mainfighterscript : MonoBehaviour
 
                 for (int i = 0; i < enemiestodamage.Length; i++)
                 {
-                    enemiestodamage[i].GetComponent<greenenemy>().TakeDamage(damage);
+                    enemiestodamage[i].GetComponent<greenenemyleft>().TakeDamage(damage);
+                    enemiestodamage[i].GetComponent<greenenemyright>().TakeDamage(damage);
                 }
 
-                Debug.Log("Punch");
+                
                 
             }
         }

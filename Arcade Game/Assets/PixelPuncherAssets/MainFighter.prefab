@@ -33,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 3046604653593125814}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3046604653520713525
 SpriteRenderer:
@@ -102,7 +102,7 @@ MonoBehaviour:
   speed: 5
   minX: -7.4
   maxX: 7.5
-  attacktimer: 0.35
+  attacktimer: 0.1
   attackpos: {fileID: 3046604653593125814}
   attackrange: 0.59
   whatisgreen:

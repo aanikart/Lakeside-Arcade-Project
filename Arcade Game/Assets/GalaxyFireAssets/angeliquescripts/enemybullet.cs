@@ -10,16 +10,17 @@ public class enemybullet : MonoBehaviour
     public scorescript script;
 
 
-    // Start is called before the first frame update
+   
     void Start()
     {
         
         Invoke("Deactivate", deactivateTimer);
 
+
         script = FindObjectOfType<scorescript>();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         Move();
@@ -50,6 +51,7 @@ public class enemybullet : MonoBehaviour
         }
         if (collision.gameObject.name == "spaceship")
         {
+            //if enemy bullet hits player, -50 points
             Deactivate();
             script.addscore(-50);
 
