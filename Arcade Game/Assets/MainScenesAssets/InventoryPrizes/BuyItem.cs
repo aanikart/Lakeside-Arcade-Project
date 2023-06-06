@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuyItem : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class BuyItem : MonoBehaviour
     public List<Item> Items = new List<Item>();
     public Transform ItemContent;
     public GameObject InventoryItem;
+    public Text ticketText;
     void Pickup()
     {
         InventoryManager.Instance.Add(Item);
@@ -21,6 +23,8 @@ public class BuyItem : MonoBehaviour
             Pickup();
             InventoryManager.Instance.ListItems();
             TicketingSystem.numTickets -= Item.value;
-        }  
+            Destroy(ticketText);
+        }
+        
     }
 }
