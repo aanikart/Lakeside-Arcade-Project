@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class TicketingSystem 
 {
-    public static int numTickets = 0;
+    public static int numTickets = 1000000000;
     public static int getTickets()
     {
         return numTickets;

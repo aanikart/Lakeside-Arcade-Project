@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Chinese Finger Trap
   m_EditorClassIdentifier: 
   id: 4
-  itemName: Chinese Finger Trap
-  value: 2000
+  itemName: Finger Trap
+  value: 4000
   icon: {fileID: 21300000, guid: 3a82b4d8dd4054460805bf7ba70eda63, type: 3}

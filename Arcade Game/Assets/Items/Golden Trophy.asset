@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Golden Trophy
   m_EditorClassIdentifier: 
   id: 17
-  itemName: Golden Trophy
+  itemName: Trophy
   value: 75000
   icon: {fileID: 21300000, guid: ce05ca0ef02253c41b9b019565af09de, type: 3}

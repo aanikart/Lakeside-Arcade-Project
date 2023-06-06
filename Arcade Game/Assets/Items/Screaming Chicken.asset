@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Screaming Chicken
   m_EditorClassIdentifier: 
   id: 14
-  itemName: Screaming Chicken
+  itemName: Chicken
   value: 40000
   icon: {fileID: 21300000, guid: dc0efcd22f583d34f9d5fb9947c0425a, type: 3}
