@@ -854,9 +854,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 562904825}
-  rb: {fileID: 562904830}
+  rb: {fileID: 1416507775}
   runSpeed: 40
-  jumpAmount: 40
+  jumpAmount: 70
   hit: {fileID: 467881081}
   hurt: {fileID: 1764363381}
   push: {fileID: 694351446}
@@ -866,7 +866,7 @@ MonoBehaviour:
   health: 10
   maxhealth: 10
   score: 0
-  isplayerdead: {fileID: 0}
+  isplayerdead: {fileID: 202734593}
   greenfightscript: {fileID: 1416507772}
 --- !u!224 &562904828
 RectTransform:
@@ -1873,7 +1873,7 @@ MonoBehaviour:
   animator: {fileID: 1416507773}
   rb: {fileID: 1416507775}
   runSpeed: 40
-  jumpAmount: 40
+  jumpAmount: 70
   hit: {fileID: 1040304136}
   hurt: {fileID: 1804036626}
   push: {fileID: 1665034682}
@@ -1883,7 +1883,7 @@ MonoBehaviour:
   health: 10
   maxhealth: 10
   score: 0
-  isplayerdead: {fileID: 0}
+  isplayerdead: {fileID: 202734593}
   fightscript: {fileID: 562904827}
 --- !u!95 &1416507773
 Animator:
