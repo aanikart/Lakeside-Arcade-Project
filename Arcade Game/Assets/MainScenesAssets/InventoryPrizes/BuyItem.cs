@@ -9,18 +9,23 @@ public class BuyItem : MonoBehaviour
     public List<Item> Items = new List<Item>();
     public Transform ItemContent;
     public GameObject InventoryItem;
+    //just for test delete later
+    public int tickets = 3000;
     void Pickup()
     {
         InventoryManager.Instance.Add(Item);
         Destroy(gameObject);
+        
     }
     private void OnMouseDown()
     {
-        if (TicketingSystem.numTickets >= Item.value)
+        //remember to change
+        if (tickets /*TicketingSystem.numTickets*/ >= Item.value)
         {
             Pickup();
             InventoryManager.Instance.ListItems();
-            TicketingSystem.numTickets -= Item.value;
+            /*TicketingSystem.numTickets*/ tickets -= Item.value;
+            
         }  
     }
 }
