@@ -11,14 +11,14 @@ public class gameoverscript : MonoBehaviour
     public Text scoretext;
     public static bool isplayerdead;
 
-    // Start is called before the first frame update
+   
     void Start()
     {
         isplayerdead = false;
 
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if (fightscript.health <= 0)

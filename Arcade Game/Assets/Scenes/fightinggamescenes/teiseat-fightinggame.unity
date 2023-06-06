@@ -308,11 +308,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 184993211}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 326b07251e71a734a9bb2820362da625, type: 3}
+  m_Script: {fileID: 11500000, guid: 5549c73310b377a46b1e1f78b050048c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 799140389}
-  ticketsText: {fileID: 2115447768}
+  fightscript: {fileID: 562904827}
+  greenfightscript: {fileID: 1416507772}
+  gameOver: {fileID: 1248977273}
+  scoretext: {fileID: 799140389}
 --- !u!1 &215683294
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,7 +868,7 @@ MonoBehaviour:
   health: 10
   maxhealth: 10
   score: 0
-  isplayerdead: {fileID: 202734593}
+  isplayerdead: {fileID: 0}
   greenfightscript: {fileID: 1416507772}
 --- !u!224 &562904828
 RectTransform:
@@ -1898,7 +1900,7 @@ MonoBehaviour:
   health: 10
   maxhealth: 10
   score: 0
-  isplayerdead: {fileID: 202734593}
+  isplayerdead: {fileID: 0}
   fightscript: {fileID: 562904827}
 --- !u!95 &1416507773
 Animator:
@@ -2007,7 +2009,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -896, y: 385}
+  m_AnchoredPosition: {x: -627, y: 385}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1416588750
@@ -2568,7 +2570,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 875, y: 385}
+  m_AnchoredPosition: {x: 655, y: 385}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1975038108
@@ -2583,8 +2585,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4f360cb865859c44a3a843caf5c2f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   greenfightscript: {fileID: 0}
   fillImage: {fileID: 0}
+=======
+  greenfightscript: {fileID: 1416507772}
+  fillImage: {fileID: 1085537773}
+>>>>>>> 45c1828171e846b323d9dd272ef109acb87e2ba1
 --- !u!114 &1975038109
 MonoBehaviour:
   m_ObjectHideFlags: 0

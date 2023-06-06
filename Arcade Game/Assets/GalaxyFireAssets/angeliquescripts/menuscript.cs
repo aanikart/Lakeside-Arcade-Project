@@ -11,10 +11,7 @@ public class menuscript : MonoBehaviour
        
     }
 
-    public void QuitGame()
-    {
-        Debug.Log("qbuttonhit");
-    }
+
 
 
     public void Mainmenu()
