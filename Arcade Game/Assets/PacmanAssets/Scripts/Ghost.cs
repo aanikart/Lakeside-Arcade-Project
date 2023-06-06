@@ -32,7 +32,7 @@ public class Ghost : MonoBehaviour
     // disable/enable certain behaviors depending on initial behavior
     public void resetState()
     {
-        Movement.ResetState();
+        Movement.resetState();
         gameObject.SetActive(true);
 
         Frightened.disable();

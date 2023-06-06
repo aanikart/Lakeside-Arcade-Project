@@ -30,7 +30,7 @@ public class GhostFrightened : GhostBehavior
         white.enabled = false;
 
         // starts flashing halfway through ghost's frightened stage
-        Invoke(nameof(Flash), duration / 2.0f);
+        Invoke(nameof(flash), duration / 2.0f);
     }
 
     private void eaten()
@@ -48,14 +48,14 @@ public class GhostFrightened : GhostBehavior
         blue.enabled = false;
         white.enabled = false;
     }
-    private void Flash()
+    private void flash()
     {
-        // if haven't been eaten
+        // if ghost hasn't been eaten, go back to default settings
         if (!isEaten)
         {
             blue.enabled = false;
             white.enabled = true;
-            white.GetComponent<AnimatedSprite>().Restart();
+            white.GetComponent<AnimatedSprite>().restart();
         }
         
     }
@@ -104,6 +104,7 @@ public class GhostFrightened : GhostBehavior
         }
     }
 
+    // if pacman and ghost collide when ghost is frightened, ghost is eaten
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Pacman"))

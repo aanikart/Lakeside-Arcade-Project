@@ -20,6 +20,7 @@ public class Pacman : MonoBehaviour
     private void Update()
     {
         rotationSpeed = 4f;
+        // use arrow keys to move pacman
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             movement.SetDirection(Vector2.up);
@@ -37,6 +38,8 @@ public class Pacman : MonoBehaviour
             movement.SetDirection(Vector2.right);
         }
 
+        // rotate pacman object depending on its direction
+        // from https://stackoverflow.com/questions/71606348/how-to-rotate-a-2d-object-by-90-degrees-in-unity and https://docs.unity3d.com/ScriptReference/Quaternion.html
         float angle = Mathf.Atan2(movement.direction.y, movement.direction.x);
         transform.rotation = Quaternion.AngleAxis(angle * Mathf.Rad2Deg, Vector3.forward);
 
@@ -52,9 +55,7 @@ public class Pacman : MonoBehaviour
         this.enabled = true;
         spriteRenderer.enabled = true;
         collider.enabled = true;
-        //deathSequence.enabled = false;
-        //deathSequence.spriteRenderer.enabled = false;
-        movement.ResetState();
+        movement.resetState();
         gameObject.SetActive(true);
     }
 }
