@@ -22,7 +22,6 @@ public class greenhealthbarscript : MonoBehaviour
         if (isplayerdead == false)
         {
 
-
             slider.maxValue = greenfightscript.maxhealth;
             if (slider.value <= slider.minValue)
             {
