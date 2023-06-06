@@ -34,7 +34,3 @@ public class BuyItem : MonoBehaviour
         }
         
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> 45c1828171e846b323d9dd272ef109acb87e2ba1
