@@ -1992,7 +1992,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -896, y: 385}
+  m_AnchoredPosition: {x: -627, y: 385}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1416588750
@@ -2058,8 +2058,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd515a6f927631c40ba26707569b5892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fightscript: {fileID: 0}
-  fillImage: {fileID: 0}
+  fightscript: {fileID: 562904827}
+  fillImage: {fileID: 1652716204}
 --- !u!1 &1451931458
 GameObject:
   m_ObjectHideFlags: 0
@@ -2553,7 +2553,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 875, y: 385}
+  m_AnchoredPosition: {x: 655, y: 385}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1975038108
@@ -2568,6 +2568,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4f360cb865859c44a3a843caf5c2f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  greenfightscript: {fileID: 1416507772}
+  fillImage: {fileID: 1085537773}
 --- !u!114 &1975038109
 MonoBehaviour:
   m_ObjectHideFlags: 0
