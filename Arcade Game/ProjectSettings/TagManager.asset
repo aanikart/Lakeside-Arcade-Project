@@ -20,7 +20,23 @@ TagManager:
   - Hitbox
   - Hurtbox
   - backgroundshooting
-
+  - greenenemy
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   m_SortingLayers:
   - name: Default
     uniqueID: 0
