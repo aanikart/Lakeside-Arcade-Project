@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 18
   itemName: Bracelet
-  value: 100000
+  value: 0
   icon: {fileID: 21300000, guid: 366ce15763c8db947900ffb13acc8121, type: 3}
