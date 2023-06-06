@@ -24,6 +24,7 @@ public class enemyspawner : MonoBehaviour
 
     IEnumerator spawntimer()
     {
+        //finds random y place to spawn enemy alien
         float spawnY = Random.Range(min, max);
 
         yield return new WaitForSeconds(4);

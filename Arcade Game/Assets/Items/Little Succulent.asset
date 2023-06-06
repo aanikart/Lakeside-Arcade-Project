@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Little Succulent
   m_EditorClassIdentifier: 
   id: 16
-  itemName: Little Succulent
+  itemName: Succulent
   value: 50000
   icon: {fileID: 21300000, guid: 536388345989a074995b143d11933fc6, type: 3}

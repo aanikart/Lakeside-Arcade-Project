@@ -25,7 +25,7 @@ public class playercontroller : MonoBehaviour
 
     public static bool isdead;
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         currentattacktimer = attacktimer;
@@ -36,7 +36,7 @@ public class playercontroller : MonoBehaviour
         anim.Play("idlespaceship", 0, 0f);
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
 
@@ -51,6 +51,7 @@ public class playercontroller : MonoBehaviour
     {
         if (Input.GetAxisRaw("Vertical") > 0f)
         {
+            //moving player up
             Vector3 temp = transform.position;
             temp.y += speed * Time.deltaTime;
 
@@ -64,6 +65,7 @@ public class playercontroller : MonoBehaviour
         }
         else if (Input.GetAxisRaw("Vertical") < 0f)
         {
+            //moving player down
             Vector3 temp = transform.position;
             temp.y -= speed * Time.deltaTime;
 
@@ -79,6 +81,8 @@ public class playercontroller : MonoBehaviour
 
     void attack()
     {
+        //attack timer so player can't spam lasers
+
         attacktimer += Time.deltaTime;
         if (attacktimer > currentattacktimer)
         {
@@ -105,7 +109,7 @@ public class playercontroller : MonoBehaviour
             if (collision.gameObject.name == "enemylaser(Clone)")
             {
                 anim.Play("hurtspaceship", 0, 0f);
-
+                //red flashing spaceship and -50 tickets
             }
         }
         
@@ -114,7 +118,7 @@ public class playercontroller : MonoBehaviour
         {
             isdead = true;
             GameOver();
-
+            //calls gameover screen to be visible
 
         }
 

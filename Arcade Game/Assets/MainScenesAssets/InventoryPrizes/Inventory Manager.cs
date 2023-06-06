@@ -7,6 +7,7 @@ using System.Linq;
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;
+
     public List<Item> Items = new List<Item>();
     public List<Item> AllItems = new List<Item>();
     public Transform ItemContent;
@@ -38,8 +39,9 @@ public class InventoryManager : MonoBehaviour
     public Item Switch;
     private void Awake()
     {
+       
         Instance = this;
-        //AddAll();
+
     }
     
     //public void AddAll()

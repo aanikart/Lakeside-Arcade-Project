@@ -9,6 +9,7 @@ public class GameOverScript : MonoBehaviour
     public Text scoreText;
     public Text ticketsText;
     
+    // display score and tickets on game over screen
     public void setUp(int score, int tickets)
     {
         gameObject.SetActive(true);
@@ -19,6 +20,7 @@ public class GameOverScript : MonoBehaviour
     public void restartButton()
     {
         SceneManager.LoadScene("aanika-pacmangame");
+        // turn off game over screen
         gameObject.SetActive(false);
     }
 
