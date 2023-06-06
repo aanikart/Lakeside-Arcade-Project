@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class gameoverscript : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class gameoverscript : MonoBehaviour
             gameOver.SetActive(true);
             //Debug.Log("gameover");
 
-            scoretext.text = "YOU HAVE " + (fightscript.score / 100).ToString() + " TICKETS";
+            scoretext.text = "YOU HAVE " + Mathf.Abs(fightscript.score / 100).ToString() + " TICKETS";
             // add tickets to overall number of tickets
             TicketingSystem.addTickets((fightscript.score / 100));
         }
@@ -38,10 +39,22 @@ public class gameoverscript : MonoBehaviour
             gameOver.SetActive(true);
             //Debug.Log("gameover");
 
-            scoretext.text = "YOU HAVE " + (fightscript.score / 100).ToString() + " TICKETS";
+            scoretext.text = "YOU HAVE " + Mathf.Abs(fightscript.score / 100).ToString() + " TICKETS";
             // add tickets to overall number of tickets
             TicketingSystem.addTickets(fightscript.score / 100);
         }
+    }
+
+    public void restartButton()
+    {
+        SceneManager.LoadScene("teiseat-fightinggame");
+        // turn off game over screen
+        gameObject.SetActive(false);
+    }
+
+    public void exitButton()
+    {
+        SceneManager.LoadScene("puncherhome");
     }
 }
 
