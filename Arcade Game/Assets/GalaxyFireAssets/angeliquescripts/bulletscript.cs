@@ -10,10 +10,9 @@ public class bulletscript : MonoBehaviour
     public scorescript script;
 
     
-
-    // Start is called before the first frame update
     void Start()
     {
+        //rotate so the bullet is horizontal
         transform.Rotate(0, 0, 270);
         Invoke("Deactivate", deactivateTimer);
         
@@ -21,7 +20,6 @@ public class bulletscript : MonoBehaviour
         script = FindObjectOfType<scorescript>();
 
 
-        //scorescript *node1 = new scorescript();
 
     }
 
@@ -46,15 +44,16 @@ public class bulletscript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "enemylaser(Clone)")
-            
+        if (collision.gameObject.name == "enemylaser(Clone)")   
         {
+            //cancels out if it hits enemylaser
             Deactivate();
 
         }
         if (collision.gameObject.name == "enemyalien(Clone)")
 
         {
+            //100 points for hitting enemy alien
             script.addscore(100);
             Deactivate();
             
@@ -64,6 +63,7 @@ public class bulletscript : MonoBehaviour
         if (collision.gameObject.name == "asteroid(Clone)")
 
         {
+            //50 points for hitting asteroid
             script.addscore(50);
             Deactivate();
             

@@ -34,10 +34,9 @@ public class asteroidscript : MonoBehaviour
     {
         if (hit == false)
         {
-            //rigidBody2D.rotation += 0.1f;
 
             move(asteroid);
-           // transform.Rotate(_rotation * Time.deltaTime);
+           
         }
     }
 
@@ -49,12 +48,12 @@ public class asteroidscript : MonoBehaviour
             anim.Play("asteroiddestory", 0, 0f);
             if (!alreadyplayed)
             {
+                //point sound played
                 audioast.PlayOneShot(pointup, 1);
                 alreadyplayed = true;
             }
 
-
-
+            //destroy after animation plays 
             Invoke("Deactivate", 0.6f);
 
         }
@@ -76,11 +75,7 @@ public class asteroidscript : MonoBehaviour
         asteroid.transform.Translate(Vector3.left * speed * Time.deltaTime);
 
 
-        //asteroid.transform.Translate(Vector3.up  * Time.deltaTime);
-
-        //transform.eulerAngles = Vector3.forward * speed * Time.deltaTime;
-
-
+        
     }
 
 

@@ -27,6 +27,7 @@ public class enemyscript : MonoBehaviour
         isdead = false;
         anim = GetComponent<Animator>();
         Invoke("Deactivate", deactivateTimer);
+        //attack timer for auto-firing lasers
         StartCoroutine(attacktimer());
 
         audiotoplay = GetComponent<AudioSource>();
@@ -39,7 +40,6 @@ public class enemyscript : MonoBehaviour
         if (isdead == false)
         {
             MoveAlien(alienprefab);
-            
 
         }
     }
@@ -50,7 +50,8 @@ public class enemyscript : MonoBehaviour
         {
             isdead = true;
             anim.Play("destroyedalien", 0, 0f);
-
+            //alien dies when laser hits it
+            // deactivates after animation plays
             Invoke("Deactivate", 0.8f);
 
             if (!alreadyplayed)
@@ -84,7 +85,7 @@ public class enemyscript : MonoBehaviour
         
         yield return new WaitForSeconds(2.5f);
         Instantiate(enemybullet, shootpoint.position, Quaternion.identity);
-        //playsound
+        
         StartCoroutine(attacktimer());
     }
 
