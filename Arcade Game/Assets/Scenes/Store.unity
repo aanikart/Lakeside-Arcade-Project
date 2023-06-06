@@ -7408,11 +7408,7 @@ PrefabInstance:
       objectReference: {fileID: 1462686469}
     - target: {fileID: 41277908154934641, guid: 4ab24032900b2f14db796783e84ad8dc, type: 3}
       propertyPath: m_RootOrder
-<<<<<<< HEAD
       value: 17
-=======
-      value: 14
->>>>>>> da11cad0e98ffcbe8c02f47bd39b4fadcefb320f
       objectReference: {fileID: 0}
     - target: {fileID: 41277908154934641, guid: 4ab24032900b2f14db796783e84ad8dc, type: 3}
       propertyPath: m_LocalScale.x
@@ -7560,7 +7556,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d926b1be6fe10d4eb45256f87b0931b, type: 3}
-<<<<<<< HEAD
 --- !u!1 &2145282282
 GameObject:
   m_ObjectHideFlags: 0
@@ -7592,8 +7587,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
->>>>>>> da11cad0e98ffcbe8c02f47bd39b4fadcefb320f
 --- !u!1001 &5798400575430358471
 PrefabInstance:
   m_ObjectHideFlags: 0
